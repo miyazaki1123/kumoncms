@@ -94,7 +94,6 @@ input[type=submit],
 input[type=reset],
 input[type=tel],
 button,
-select,
 textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -111,7 +110,6 @@ input[type=submit]:focus:not(:focus-visible),
 input[type=reset]:focus:not(:focus-visible),
 input[type=tel]:focus:not(:focus-visible),
 button:focus:not(:focus-visible),
-select:focus:not(:focus-visible),
 textarea:focus:not(:focus-visible) {
   outline: none;
 }
@@ -1013,10 +1011,19 @@ body {
 .icon--addlink::before {
   content: "add_link";
 }
+.icon--where_to_vote::before {
+  content: "where_to_vote";
+}
+.icon--calendar_month::before {
+  content: "calendar_month";
+}
+.icon--person::before {
+  content: " person";
+}
 .icon--paste {
   position: relative;
-  width: 33px;
-  height: 33px;
+  width: 1.3em;
+  height: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1033,8 +1040,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 33px;
-  height: 33px;
+  width: 0.9em;
+  height: 0.9em;
 }
 .icon--info2::before {
   font-size: 3em;
@@ -1204,13 +1211,13 @@ body {
   background: #004098 !important;
 }
 
-input[type=text] {
+input[type=text], select {
   border: solid 1px #707070;
   background: #fff;
   padding: 10px;
   width: 100%;
 }
-input[type=text].t01 {
+input[type=text].t01, select.t01 {
   padding: 10px !important;
 }
 
@@ -1237,6 +1244,37 @@ input[type=file]::file-selector-button {
   font-size: 0.875rem;
   display: inline-block;
   margin-right: 1em;
+}
+@media (min-width: 769px) {
+  input[type=file]::-webkit-file-upload-button {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  input[type=file]::file-selector-button {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  input[type=file]::-webkit-file-upload-button:hover {
+    background: #009B63;
+    color: #fff;
+  }
+  input[type=file]::file-selector-button:hover {
+    background: #009B63;
+    color: #fff;
+  }
+}
+
+label {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
 }
 
 .site-header {
@@ -1869,6 +1907,10 @@ input[type=file]::file-selector-button {
   width: 100%;
   background: #D4EBE3;
 }
+#page .content--box {
+  background: #fff;
+  padding: 20px;
+}
 #page .content--add-blog {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1888,8 +1930,6 @@ input[type=file]::file-selector-button {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  background: #fff;
-  padding: 20px;
 }
 #page .content--add-blog__main > div {
   display: -webkit-box;
@@ -1920,8 +1960,6 @@ input[type=file]::file-selector-button {
   width: 100% !important;
 }
 #page .content--add-blog__media {
-  padding: 20px;
-  background: #fff;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -1933,6 +1971,27 @@ input[type=file]::file-selector-button {
 #page .content--add-blog__media > *:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+}
+#page .content--add-blog__pdf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  background: #E6ECF5;
+  padding: 10px 20px;
+  margin-top: 15px;
+}
+#page .content--add-blog__pdf .chk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
 }
 #page .content--add-blog__images {
   display: -webkit-box;
@@ -1957,28 +2016,66 @@ input[type=file]::file-selector-button {
   margin: 0;
 }
 #page .content--add-blog__images table td:nth-child(2) {
-  width: 100px;
+  width: 80px;
   text-align: right;
   position: relative;
 }
+@media (min-width: 769px) {
+  #page .content--add-blog__images table td:nth-child(2) {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  #page .content--add-blog__images table td:nth-child(2):hover::before {
+    background-image: url('data:image/svg+xml;utf8,<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="%23004098"><path d="m0 8.04c.02 4.12 3.16 7.51 7.18 7.92-4.01-.41-7.16-3.8-7.18-7.92z"/><path d="m8 0c-4.42 0-8 3.58-8 8 0-4.41 3.59-8 8-8s8 3.59 8 8c0-4.42-3.58-8-8-8z"/><path d="m8.82 15.96c4.02-.41 7.16-3.79 7.18-7.92-.02 4.12-3.17 7.51-7.18 7.92z"/></g><path d="m8 0c-4.41 0-8 3.59-8 8s0 .03 0 .04c.02 4.12 3.17 7.51 7.18 7.92.27.03.54.04.82.04s.55-.01.82-.04c4.02-.41 7.16-3.8 7.18-7.92 0-.01 0-.03 0-.04 0-4.41-3.59-8-8-8zm0 15c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z" fill="%23004098"/><path d="m12.82 3.13c-.39-.39-1.02-.39-1.41 0l-3.43 3.43-3.43-3.43c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l3.43 3.43-3.43 3.43c-.39.39-.39 1.02 0 1.41.2.2.45.29.71.29s.51-.1.71-.29l3.43-3.43 3.43 3.43c.2.2.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.02 0-1.41l-3.43-3.43 3.43-3.43c.39-.39.39-1.02 0-1.41z" fill="%23004098"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 #page .content--add-blog__images table td:nth-child(2)::before {
+  pointer-events: none;
   content: "";
-  width: 20px;
-  height: 20px;
-  background-image: url('data:image/svg+xml;utf8,<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="%23707070"><path d="m0 8.04c.02 4.12 3.16 7.51 7.18 7.92-4.01-.41-7.16-3.8-7.18-7.92z"/><path d="m8 0c-4.42 0-8 3.58-8 8 0-4.41 3.59-8 8-8s8 3.59 8 8c0-4.42-3.58-8-8-8z"/><path d="m8.82 15.96c4.02-.41 7.16-3.79 7.18-7.92-.02 4.12-3.17 7.51-7.18 7.92z"/></g><path d="m8 0c-4.41 0-8 3.59-8 8s0 .03 0 .04c.02 4.12 3.17 7.51 7.18 7.92.27.03.54.04.82.04s.55-.01.82-.04c4.02-.41 7.16-3.8 7.18-7.92 0-.01 0-.03 0-.04 0-4.41-3.59-8-8-8zm0 15c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z" fill="#707070"/><path d="m12.82 3.13c-.39-.39-1.02-.39-1.41 0l-3.43 3.43-3.43-3.43c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l3.43 3.43-3.43 3.43c-.39.39-.39 1.02 0 1.41.2.2.45.29.71.29s.51-.1.71-.29l3.43-3.43 3.43 3.43c.2.2.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.02 0-1.41l-3.43-3.43 3.43-3.43c.39-.39.39-1.02 0-1.41z" fill="#707070"/></svg>');
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml;utf8,<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="%23707070"><path d="m0 8.04c.02 4.12 3.16 7.51 7.18 7.92-4.01-.41-7.16-3.8-7.18-7.92z"/><path d="m8 0c-4.42 0-8 3.58-8 8 0-4.41 3.59-8 8-8s8 3.59 8 8c0-4.42-3.58-8-8-8z"/><path d="m8.82 15.96c4.02-.41 7.16-3.79 7.18-7.92-.02 4.12-3.17 7.51-7.18 7.92z"/></g><path d="m8 0c-4.41 0-8 3.59-8 8s0 .03 0 .04c.02 4.12 3.17 7.51 7.18 7.92.27.03.54.04.82.04s.55-.01.82-.04c4.02-.41 7.16-3.8 7.18-7.92 0-.01 0-.03 0-.04 0-4.41-3.59-8-8-8zm0 15c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z" fill="%23707070"/><path d="m12.82 3.13c-.39-.39-1.02-.39-1.41 0l-3.43 3.43-3.43-3.43c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l3.43 3.43-3.43 3.43c-.39.39-.39 1.02 0 1.41.2.2.45.29.71.29s.51-.1.71-.29l3.43-3.43 3.43 3.43c.2.2.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.02 0-1.41l-3.43-3.43 3.43-3.43c.39-.39.39-1.02 0-1.41z" fill="%23707070"/></svg>');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 2;
 }
 #page .content--add-blog__images table input[type=button] {
+  cursor: pointer;
   color: #004098;
   font-size: 0.875rem;
   border: none;
   background: none;
+  width: 100% !important;
+}
+#page .content--add-blog__post {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+#page .content--add-blog__post > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+#page .content--add-blog__post > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+#page .content--add-blog__post icon {
+  color: #ccc;
 }
 
 #page .site-main #navi {

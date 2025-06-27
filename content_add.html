@@ -178,7 +178,7 @@
 							<section class="flex--col gap--40">
 								<div class="content--add-blog">
 									<h3>新規登録</h3>
-									<div class="content--add-blog__main">
+									<div class="content--box content--add-blog__main">
 										<div>
 											<h4>記事名</h4>
 											<input type="text" size="75" class="t01 imeon" name="report_title"
@@ -210,7 +210,7 @@
 
 								<div class="content--add-blog">
 									<h3>メディアの登録 (jpg/png/pdf)</h3>
-									<div class="content--add-blog__media">
+									<div class="content--box content--add-blog__media">
 										<div class="content--add-blog__images">
 										<h4>メディア１</h4>
 										<table>
@@ -283,8 +283,6 @@
 														style="width:70px">
 												</td>
 											</tr>
-
-
 										</tbody>
 									</table>
 									</div>
@@ -303,28 +301,136 @@
 														style="width:70px">
 												</td>
 											</tr>
-
-
 										</tbody>
 									</table>
 									</div>
 									
 									<div class="content--add-blog__pdf">
-										<p class="chk">
+										<h4>PDF</h4>
+										<div>
+											<p class="chk">
 											<label for="pdf_download_flg_0">
 												<input type="radio" name="pdf_download_flg" id="pdf_download_flg_0" value="0"
-												checked="">させない
+												checked="">ダウンロード可
 											</label>
 											<label for="pdf_download_flg_1">
-												<input type="radio" name="pdf_download_flg" id="pdf_download_flg_1" value="1">させる
+												<input type="radio" name="pdf_download_flg" id="pdf_download_flg_1" value="1">ダウンロード不可
 											</label>
-											
 										</p>
+										</div>
 									</div>
 									</div>
 								
 							
 								</div>
+
+
+								<div class="content--add-blog">
+									<h3>アンケートフォームの追加</h3>
+									<div class="content--box">
+										<select name="form_id" class="t01 imeon" id="form_id">
+											<option value="" selected=""></option>
+											<option value="1">テスト</option>
+											<option value="2">2</option>
+											<option value="3">0617テスト</option>
+											<option value="4">2014年度保護者面談予約</option>
+											<option value="5">３Ｂ</option>
+											<option value="6">日本文化体験保護者説明会</option>
+											<option value="7">投稿フォーム</option>
+											<option value="8">確認フォーム</option>
+											<option value="9">ご意見</option>
+											<option value="10">感想など</option>
+											<option value="11">表現祭の感想</option>
+											<option value="12">投稿</option>
+											<option value="13">お問い合わせ・ご意見・連絡など</option>
+											<option value="14">Ｎ検申し込み</option>
+											<option value="15">PTA委員伺い</option>
+											<option value="16">全校版　感想</option>
+											<option value="17">健康確認</option>
+											<option value="18">落とし物問い合わせ</option>
+											<option value="19">保護者面談2015（中１）</option>
+											<option value="20">保護者面談2015（中２）</option>
+											<option value="21">保護者面談2015（中３）</option>
+											<option value="22">保護者面談2015（高１）</option>
+											<option value="23">保護者面談2015（高２）</option>
+											<option value="24">保護者面談2015（高３）</option>
+											<option value="25">中１学年懇親会（2015/06/20）</option>
+											<option value="26">お問い合わせ</option>
+											<option value="27">ＰＴＡ学年委員会申し込み</option>
+											<option value="28">感想フォーム</option>
+											<option value="29">メールアドレス登録</option>
+											<option value="30">新入生問い合わせ</option>
+											<option value="31">学年だよりについて</option>
+											<option value="32">学年だより感想</option>
+											<option value="33">PTA総会の感想</option>
+											<option value="34">地理・歴史巡検</option>
+											<option value="35">保護者面談2020　中１</option>
+											<option value="36">保護者面談2020　中２</option>
+											<option value="38">保護者面談2020　中３</option>
+											<option value="39">保護者面談2020　高１</option>
+											<option value="41">保護者面談2020　高３</option>
+											<option value="45">表現祭の感想</option>
+											<option value="46">本の紹介</option>
+											<option value="48">体育祭の感想</option>
+											<option value="49">第２５回表現祭</option>
+											<option value="50">高３Ｃ　事前相談フォーム</option>
+											<option value="51">保護者アンケート①</option>
+											<option value="52">保護者アンケート②</option>
+											<option value="53">保護者面談2020　高2</option>
+											<option value="54">中2合唱発表会観覧希望フォーム</option>
+											<option value="55">26期日本文化体験 希望調査</option>
+											<option value="56">中2生の皆さん410アンケート</option>
+											<option value="57">オンライン家庭環境調査</option>
+											<option value="60">食堂利用について</option>
+											<option value="61">中2</option>
+											<option value="62">中2　学級懇談会・学年懇談会　出席調査</option>
+											<option value="63">中2　学級懇談会・学年懇談会　出席調査</option>
+											<option value="64">中2懇談会出席調査</option>
+											<option value="65">9月5日保護者説明会　出欠席調査</option>
+											<option value="66">入学説明会確認用</option>
+											<option value="67">2021ICT環境調査</option>
+											<option value="68">保護者面談2021</option>
+											<option value="69">保護者面談2021　中1</option>
+											<option value="70">保護者面談2021　中2</option>
+											<option value="71">保護者面談2021　中3</option>
+											<option value="72">保護者面談2021　高1</option>
+											<option value="73">保護者面談2021　高2</option>
+											<option value="74">保護者面談2021　高3</option>
+											<option value="75">高1学級懇談会・学年懇談会</option>
+											<option value="76">保護者面談2022</option>
+											<option value="78">高1学級・学年懇談会11/12（土）</option>
+											<option value="79">テストサイト</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="content--add-blog">
+									<h3>投稿</h3>
+									<div class="content--box content--add-blog__post">
+										<div>
+											<h4><span class="icon icon--where_to_vote"></span>ステータス</h4>
+											<div class="chk">
+												<label for="status1">
+													<input type="radio" name="status" id="status1" value="0">公開
+												</label>
+												<label for="status2">
+													<input type="radio" name="status" id="status2" value="1">非公開
+												</label>
+												<label for="status3">
+													<input type="radio" name="status" id="status3" value="2">下書き
+												</label>
+											</div>
+										</div>
+										<div>
+											<h4><span class="icon icon--calendar_month"></span>投稿日</h4>
+										</div>
+
+										<div>
+											<h4><span class="icon icon--paste"></span>作成者名</h4>
+										</div>
+									</div>
+								</div>
+
 							</section>
 
 
@@ -354,82 +460,7 @@
 								<span id="calenArea1"></span></span>
 							<br>
 
-							<img src="/admin//image/i_form.png" border="0" alt="フォーム名">
-							<p class="text">
-								<select name="form_id" class="t01 imeon" id="form_id">
-									<option value="" selected=""></option>
-									<option value="1">テスト</option>
-									<option value="2">2</option>
-									<option value="3">0617テスト</option>
-									<option value="4">2014年度保護者面談予約</option>
-									<option value="5">３Ｂ</option>
-									<option value="6">日本文化体験保護者説明会</option>
-									<option value="7">投稿フォーム</option>
-									<option value="8">確認フォーム</option>
-									<option value="9">ご意見</option>
-									<option value="10">感想など</option>
-									<option value="11">表現祭の感想</option>
-									<option value="12">投稿</option>
-									<option value="13">お問い合わせ・ご意見・連絡など</option>
-									<option value="14">Ｎ検申し込み</option>
-									<option value="15">PTA委員伺い</option>
-									<option value="16">全校版　感想</option>
-									<option value="17">健康確認</option>
-									<option value="18">落とし物問い合わせ</option>
-									<option value="19">保護者面談2015（中１）</option>
-									<option value="20">保護者面談2015（中２）</option>
-									<option value="21">保護者面談2015（中３）</option>
-									<option value="22">保護者面談2015（高１）</option>
-									<option value="23">保護者面談2015（高２）</option>
-									<option value="24">保護者面談2015（高３）</option>
-									<option value="25">中１学年懇親会（2015/06/20）</option>
-									<option value="26">お問い合わせ</option>
-									<option value="27">ＰＴＡ学年委員会申し込み</option>
-									<option value="28">感想フォーム</option>
-									<option value="29">メールアドレス登録</option>
-									<option value="30">新入生問い合わせ</option>
-									<option value="31">学年だよりについて</option>
-									<option value="32">学年だより感想</option>
-									<option value="33">PTA総会の感想</option>
-									<option value="34">地理・歴史巡検</option>
-									<option value="35">保護者面談2020　中１</option>
-									<option value="36">保護者面談2020　中２</option>
-									<option value="38">保護者面談2020　中３</option>
-									<option value="39">保護者面談2020　高１</option>
-									<option value="41">保護者面談2020　高３</option>
-									<option value="45">表現祭の感想</option>
-									<option value="46">本の紹介</option>
-									<option value="48">体育祭の感想</option>
-									<option value="49">第２５回表現祭</option>
-									<option value="50">高３Ｃ　事前相談フォーム</option>
-									<option value="51">保護者アンケート①</option>
-									<option value="52">保護者アンケート②</option>
-									<option value="53">保護者面談2020　高2</option>
-									<option value="54">中2合唱発表会観覧希望フォーム</option>
-									<option value="55">26期日本文化体験 希望調査</option>
-									<option value="56">中2生の皆さん410アンケート</option>
-									<option value="57">オンライン家庭環境調査</option>
-									<option value="60">食堂利用について</option>
-									<option value="61">中2</option>
-									<option value="62">中2　学級懇談会・学年懇談会　出席調査</option>
-									<option value="63">中2　学級懇談会・学年懇談会　出席調査</option>
-									<option value="64">中2懇談会出席調査</option>
-									<option value="65">9月5日保護者説明会　出欠席調査</option>
-									<option value="66">入学説明会確認用</option>
-									<option value="67">2021ICT環境調査</option>
-									<option value="68">保護者面談2021</option>
-									<option value="69">保護者面談2021　中1</option>
-									<option value="70">保護者面談2021　中2</option>
-									<option value="71">保護者面談2021　中3</option>
-									<option value="72">保護者面談2021　高1</option>
-									<option value="73">保護者面談2021　高2</option>
-									<option value="74">保護者面談2021　高3</option>
-									<option value="75">高1学級懇談会・学年懇談会</option>
-									<option value="76">保護者面談2022</option>
-									<option value="78">高1学級・学年懇談会11/12（土）</option>
-									<option value="79">テストサイト</option>
-								</select>
-							</p>
+							
 							<br>
 							
 

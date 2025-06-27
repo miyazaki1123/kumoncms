@@ -737,11 +737,26 @@ body{
             content: "add_link";
         }
     }
-
+    &--where_to_vote{
+        &::before {
+            content: "where_to_vote";
+        }
+    }
+    &--calendar_month{
+        &::before {
+            content: "calendar_month";
+        }
+    }
+     &--person{
+        &::before {
+            content: " person";
+        }
+    }
+   
     &--paste {
         position: relative;
-        width: 33px;
-        height: 33px;
+        width: 1.3em;
+        height: 1em;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -749,8 +764,8 @@ body{
         &::before {
             content: "";
             @include mx.icon_paste("FFF");
-            width: 33px;
-            height: 33px;
+            width: 0.9em;
+            height: 0.9em;
         }
     }
 
@@ -940,7 +955,7 @@ body{
 		background: #004098 !important;
 	}
 }
-input[type="text"]{
+input[type="text"],select {
 	border: solid 1px #707070;
 	background: #fff;
 	padding: 10px;
@@ -961,5 +976,15 @@ input[type="file"]{
         @include mx.fs(14);
         display: inline-block;
         margin-right: 1em;
+        @include mx.hover{
+            background: #009B63;
+            color: #fff;
+        }
     }
+}
+label{
+    cursor: pointer;
+    display: flex;
+	align-items: center;
+    gap:5px;
 }
