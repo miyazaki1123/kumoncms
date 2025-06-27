@@ -1574,11 +1574,15 @@ label {
   }
 }
 
+#login #footer {
+  display: none;
+}
+
 #admin_login #header {
   display: none;
 }
 #admin_login .main {
-  min-height: calc(100vh - 105px);
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
