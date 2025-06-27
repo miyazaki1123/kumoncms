@@ -1,0 +1,8 @@
+var checkContents = {
+	"album_note" : {
+		FieldName : "備考"
+		, Contents : [
+			{"max_lengthCheck": "80"}
+		]
+	}
+};

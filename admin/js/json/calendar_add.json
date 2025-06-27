@@ -1,0 +1,47 @@
+var checkContents = {
+	"calendar_name" : {
+		FieldName : "行事"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"max_lengthCheck": "200"}
+		]
+	},
+	"calendar_note" : {
+		FieldName : "詳細"
+		, Contents : [
+			{"max_lengthCheck": "400"}
+		]
+	},
+	"startDate_1" : {
+		FieldName : "開始日付"
+		, Contents : [
+			{"date_requireCheck" : ""}
+			, {"valid_dateCheck": ""}
+		]
+	},
+	"endDate_1" : {
+		FieldName : "終了日付"
+		, Contents : [
+			{"date_requireCheck" : ""}
+			, {"valid_dateCheck": ""}
+		]
+	},
+	"blog_id" : {
+		FieldName : "ブログ"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	},
+	"base_color" : {
+		FieldName : "カレンダー色"
+		, Contents : [
+			{"max_lengthCheck" : "20"}
+		]
+	},
+};
+
+
+
+
+
+

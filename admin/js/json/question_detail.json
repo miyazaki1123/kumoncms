@@ -1,0 +1,16 @@
+var checkContents = {
+	"form_item0" : {
+		FieldName : "項目名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "200"}
+		]
+	},
+	"form_kind0" : {
+		FieldName : "種類"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "20"}
+		]
+	}
+};

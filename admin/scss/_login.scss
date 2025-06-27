@@ -1,0 +1,194 @@
+@use "_mixin.scss" as mx;
+
+#admin_login {
+	#header{
+		display: none;
+	}
+	.main {
+		min-height: calc(100vh - 105px);
+			display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+	h2{
+		text-align: center;
+		@include mx.fs(40);
+		color: #009B63;
+		margin-bottom: 10px;
+	}
+	.sec {
+		&--account {
+			padding: 100px 25px 115px;
+			max-width: 1380px;
+			width: 100%;
+			margin: auto;
+
+			@include mx.sp {
+				max-width: 560px;
+				padding: 30px 15px 35px;
+			}
+
+			&__header {
+				max-width: 995px;
+				margin: 0 auto 30px;
+
+				@include mx.sp {
+					margin-bottom: 20px;
+				}
+
+				h1 {
+					margin: auto;
+					text-align: center;
+					@include mx.fs(30, 20);
+					color: #004098;
+					font-weight: 500;
+					letter-spacing: 0.037em;
+
+					figure {
+						svg {
+							width: 385px;
+							height: auto;
+
+							@include mx.sp {
+								max-width: 320px;
+								width: calc(100% - 100px);
+							}
+						}
+					}
+
+					figcaption {
+						letter-spacing: 0.05em;
+						margin: 12px auto;
+						@include mx.fs(20, 20);
+						color: #004098;
+
+						@include mx.sp {
+							line-height: 1.5;
+						}
+					}
+				}
+
+				p {
+					margin: 32px 0 0;
+
+					@include mx.sp {
+						margin: 20px 0 0;
+					}
+
+					@include mx.fs(19, 16, 400, #505050)
+				}
+			}
+
+			&__information {
+				margin-top: 32px;
+				margin-bottom: 27px;
+
+				@include mx.sp {
+					margin-top: 15px;
+					margin-bottom: 10px;
+				}
+
+				ul {
+					li {
+						@include mx.fs(19);
+						color: #009B63;
+						text-align: center;
+						margin: 10px 0;
+						line-height: 1.5;
+
+						@include mx.sp {
+							@include mx.fs(14);
+
+							text-align: left;
+						}
+					}
+				}
+			}
+
+			&__complete {
+				padding-top: 190px;
+				margin-bottom: 140px;
+
+				@include mx.sp {
+					padding-top: 20px;
+					margin-bottom: 50px;
+				}
+
+				h2 {
+					@include mx.fs(50, 28);
+					text-align: center;
+					color: #004098;
+					font-weight: 700;
+					line-height: 1.5;
+
+					span {
+						display: inline-block;
+					}
+				}
+
+				p {
+					margin: 30px 0;
+					text-align: center;
+					line-height: 1.5;
+					@include mx.fs(19, 16);
+
+					@include mx.sp {
+						margin: 20px 0;
+					}
+
+					span {
+						display: inline-block;
+					}
+				}
+			}
+
+			&__error {
+				color: #D33939;
+				text-align: center;
+				margin-top: -16px;
+				margin-bottom: 20px;
+				@include mx.fs(15, 12);
+				line-height: 1.4;
+
+				@include mx.sp {
+					margin-top: -6px;
+					text-align: left;
+				}
+			}
+		}
+	}
+	.content--colorbox__input{
+		dd{
+			position: relative;
+			input[type="password"]{
+				padding-right: 50px;
+			}
+		}
+	}
+	.icon-visibility{
+            width: 42px;
+            height: 42px;
+            position: absolute;
+            right: 0px;
+            top:50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &.icon-visibility-off{
+                &::after{
+                    content:"";
+                    @include mx.icon_eye('90928F');
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+            &::after{
+                content:"";
+                @include mx.icon_eye_close('90928F');
+                width: 80%;
+                height: 80%;
+            }
+        }
+}

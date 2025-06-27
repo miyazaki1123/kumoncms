@@ -1,0 +1,9 @@
+var checkContents = {
+	"banner_link" : {
+		FieldName : "リンク先"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "200"}
+		]
+	}
+};

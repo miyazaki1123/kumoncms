@@ -1,0 +1,243 @@
+@use "_mixin.scss" as mx;
+
+.site-header {
+    width: 100%;
+    height: 100px;
+    position: sticky;
+    left: 0;
+    top:0;
+    background: #fff;
+    z-index: 100;
+    border-bottom: solid 2px #009B63;
+
+    &__top {
+        padding: 0 20px;
+        height: 45px;
+        background: #009B63;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+
+        @include mx.sp {
+            height: 30px;
+            padding: 0 12px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .site-title {
+            @include mx.fs(15);
+            letter-spacing: 0em;
+
+            br {
+                display: none;
+            }
+
+            @include mx.max_w(1200) {
+                @include mx.fs(13);
+            }
+
+            @include mx.max_w(880) {
+                line-height: 1.5;
+
+                br {
+                    display: block;
+                }
+            }
+
+            @include mx.sp {
+                @include mx.fs(15);
+
+                br {
+                    display: none;
+                }
+            }
+
+        }
+
+        .nav-account {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 107px;
+
+            @include mx.max_w(1200) {
+                gap: 30px;
+            }
+
+            @include mx.max_w(880) {
+                gap: 20px
+            }
+
+            @include mx.sp {
+                display: none;
+            }
+
+            div {
+                @include mx.fs(20);
+
+                @include mx.max_w(1200) {
+                    @include mx.fs(16);
+                }
+
+                @include mx.max_w(880) {
+                    @include mx.fs(14);
+                }
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 45px;
+
+                @include mx.max_w(1200) {
+                    gap: 20px;
+                }
+
+                @include mx.max_w(880) {
+                    gap: 10px
+                }
+
+                li {
+                    height: 100%;
+
+                    a {
+                        letter-spacing: 0em;
+                        height: 100%;
+                        color: #fff;
+                        @include mx.fs(15);
+                        text-decoration: none;
+
+                        @include mx.max_w(1200) {
+                            @include mx.fs(13);
+                        }
+
+                        @include mx.max_w(880) {
+                            @include mx.fs(12);
+                            line-height: 1.3;
+                        }
+
+                        @include mx.hover(0.3) {
+                            opacity: 0.7;
+                        }
+
+                        display: flex;
+                        align-items: center;
+                        gap:3px;
+
+                        .icon {
+                            &::before {
+                                font-size: 1.6em;
+                                font-family: 'Material Symbols Outlined';
+                                font-weight: 300;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 55px;
+        padding: 0 20px;
+    }
+
+    .logo--kumon {
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        gap: 20px;
+        color: #707070;
+        @include mx.fs(16);
+        white-space: nowrap;
+        img {
+            width: 140px;
+            height: auto;
+        }
+        bottom:10px;
+
+
+        @include mx.sp {
+            position: fixed;
+            width: 100%;
+            height: 75px;
+            bottom: auto;
+            top: 30px;
+            left: 0px;
+            transform: none;
+            z-index: 10;
+            background: #E2E9F3;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+                width: 192px;
+                height: 43px;
+
+                @include mx.sp_s {
+                    width: 142px;
+                    height: auto;
+                    left: 15px;
+                }
+            }
+
+        }
+
+        @include mx.sp_s {
+            height: 55px;
+        }
+    }
+}
+
+.todays-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:15px;
+     color: #009B63;
+    &__date {
+        display: flex;
+        align-items: center;
+        @include mx.fs(28);
+        @include mx.max_w(1080){
+            @include mx.fs(24); 
+        }
+        span {
+            transform: translateY(0.16em);
+            font-size: 0.7em;
+        }
+    }
+    &__weather{
+         display: flex;
+        align-items: center;
+        @include mx.fs(28);
+        @include mx.max_w(1080){
+            @include mx.fs(24); 
+        }
+        img{
+            width: 1.8em;
+            height: auto;
+        }
+    }
+    &__temperature{
+        @include mx.fs(28);
+        @include mx.max_w(1080){
+            @include mx.fs(24); 
+        }
+    }
+    &__time{
+        @include mx.fs(34);
+        @include mx.max_w(1080){
+            @include mx.fs(30); 
+        }
+    }
+}
+

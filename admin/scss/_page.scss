@@ -1,0 +1,170 @@
+@use "_mixin.scss" as mx;
+
+#footer {
+	display: none;
+}
+
+#wrap {
+	width: 100%;
+	overflow: clip;
+}
+
+#page {
+	.site-main {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+		grid-template-rows: 1fr;
+
+	
+
+
+		#view {
+			margin: 0;
+			float: none;
+			width: 100%;
+			
+			.site-contents {
+				display: grid;
+				grid-template-columns: 1fr 250px;
+				grid-template-rows: auto 1fr;
+				h2 {
+					grid-column: 1;
+					grid-row: 1;
+					background: none;
+					padding: 25px 30px 10px;
+					border-bottom: none;
+					color: #009B63;
+					@include mx.fs(24);
+					display: flex;
+					align-items: center;
+					line-height: 1.5;
+					.icon {
+						flex-shrink: 0;
+						font-size: 1em;
+						
+					}
+				}
+
+				h3 {
+					@include mx.fs(24);
+					color: #004098;
+					
+				}
+
+				.postinfo {
+					margin: 0;
+					grid-row: 2;
+					grid-column: 1;
+					float: none;
+					width: 100%;
+					padding: 0 40px 40px;
+					span{
+						padding: 0;
+					}
+				}
+
+				.right {
+					grid-row: 1 / span 2;
+					grid-column: 2;
+					float: none;
+					width: 100%;
+					background: #D4EBE3;
+				}
+			}
+
+		}
+	}
+
+	.content {
+		
+		&--add-blog {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			&__main {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				background: #fff;
+				padding: 20px;
+
+				>div {
+					display: flex;
+					gap: 10px;
+					align-items: center;
+
+					h4 {
+						background: #E6ECF5;
+						padding: 10px;
+						color: #004098;
+						width: 30%;
+						white-space: nowrap;
+					}
+				}
+			}
+
+			&__text{
+				>*{
+					width: 100%!important;
+					background: #fff;
+					#report_note{
+						display: none;
+					}
+					.nicEdit-main{
+						padding: 10px;;
+						margin: 0!important;
+						width: 100%!important;
+					}
+				}
+			}
+			&__media{
+				padding: 20px;
+				background: #fff;
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto;
+				gap: 10px;
+			}
+			&__images{
+					display: flex;
+					align-items: center;
+					gap:4px 20px;
+					@include mx.max_w(1080){
+						flex-wrap: wrap;
+					}
+					>h4{
+						white-space: nowrap;
+					}
+					table{
+						width: 100%;
+						margin: 0;
+						
+						td{
+							&:nth-child(2){
+								width: 100px;
+								text-align: right;
+								position: relative;
+								&::before{
+									content:"";
+									width: 20px;
+									height: 20px;
+									@include mx.icon_close_circle('707070');
+									position: absolute;
+									left: 0;
+									top:0;
+									z-index: 2;
+								}
+							}
+						}
+						input[type="button"]{
+							color: #004098;
+							@include mx.fs(14);
+							border: none;
+							background: none;
+						}
+					}
+			}
+		}
+	}
+}

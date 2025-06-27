@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<link href="/admin/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/admin/css/reset.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/pagenation.css">
+	<link rel="stylesheet" type="text/css" href="/admin/js/calendar.css" media="all">
+
+	<script type="text/javascript" src="/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="/admin/js/over.js"></script>
+	<script type="text/javascript" src="/admin/js/inputCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/confirmCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/com.js"></script>
+	<script type="text/javascript" src="/admin/js/calendar.js"></script>
+
+	<link href="/admin/css/style_02.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body id="login">
+	<a name="top"></a>
+
+	<div id="wrap">
+
+		<form action="/admin/index.php/login/admin_login" method="post" name="form1" id="admin_login">
+
+		<!--ヘッダー-->
+		<!--ヘッダー-->
+
+			<div class="wrapper">
+				<main class="main">
+					<section class="sec sec--account">
+						<header class="sec--account__header">
+							<h1>
+								<figure>
+									<img src="/admin/image/site_logo.svg" alt="KUMON">
+									<figcaption>公文国際学園中等部・高等部　保護者専用サイト</figcaption>
+								</figure>
+							</h1>
+						</header>
+						
+						<div class="content--colorbox">
+							<h2>管理画面</h2>
+							<div class="content--colorbox__inner">
+								<div>
+									<div class="content--colorbox__input">
+										<dl>
+											<dt>アカウント</dt>
+											<dd><input type="text" name="user_id" value="" size="" class="imeoff"></dd>
+											<dt>パスワード</dt>
+											<dd>
+
+												<span class="icon-visibility"></span>
+												<input type="password" name="password" value="" size="" class="imeoff">
+
+											</dd>
+										</dl>
+										<div>
+											<input type="checkbox" id="logged" checked="">
+											<label for="logged">ログイン状態を保持する</label>
+										</div>
+									</div>
+									<div class="content--colorbox__nav">
+										<div class="btn--submit">
+											<input type="submit" value="ログイン" id="_HPB_ROLLOVER2" class="btn--t01">
+											<span class="icon icon--start"></span>
+										
+										</div>
+									</div>
+									<a href="lostpassword.html" class="btn--circle"><i
+											class="icon icon--circle"></i>パスワードを忘れた</a>
+								</div>
+							</div>
+						</div>
+					</section>
+				</main>
+			</div>
+
+		</form>
+
+		<script>
+			$(function () {
+				$('#_HPB_ROLLOVER2').click(function () { return dologin() });
+			});
+		</script>
+
+		<script>
+			function doLDown(event) {
+				if (event.keyCode == 13) {
+					return dologin();
+				}
+			}
+			function dologin() {
+				// JavaScriptでのバリデーション
+				$('#admin_login').submit();
+				return false;
+			}
+		</script>
+
+
+		<div id="footer">
+			<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
+		</div>
+	</div>
+
+
+</body>
+
+<script type="module" src="/admin/js/main.js"></script>
+
+</html>

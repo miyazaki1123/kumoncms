@@ -1,0 +1,113 @@
+@use "_mixin.scss" as mx;
+#page {
+	.site-main {
+		#navi {
+			margin: 0;
+			width: 100%;
+			float: none;
+			background: #004098;
+			padding-bottom: 200px;
+			position: relative;
+			#navi__inner {
+				z-index: 10;
+				background: #004098;
+
+				button {
+
+					background: #BF9D6D;
+					width: 100%;
+					text-align: left;
+					color: #fff;
+
+					@include mx.hover {
+						filter: brightness(1.2);
+					}
+				}
+
+				>a {
+					background: #009B63;
+					width: 100%;
+					text-align: left;
+					color: #fff;
+
+					@include mx.hover {
+						filter: brightness(1.2);
+					}
+				}
+
+				>a,
+				h3,
+				button {
+					padding: 0.4em 0 0.4em 0.5em;
+					display: flex;
+					align-items: center;
+					width: 100%;
+					gap: 5px;
+
+				}
+
+				h3 {
+					background: #004098;
+
+				}
+
+				.icon {
+					flex-shrink: 0;
+				}
+
+				ul {
+					background: transparent;
+					display: flex;
+					flex-direction: column;
+					gap: 2px;
+					border-right: 2px solid #004098;
+					border-left: 2px solid #004098;
+					border-bottom: 2px solid #004098;
+
+					li {
+						padding: 0;
+						margin: 0;
+
+						a {
+							font-weight: 500;
+							color: #004098;
+							padding: 0.3em 0 0.3em 1.2em;
+							display: block;
+							background: rgba(255, 255, 255, 0.85);
+							position: relative;
+							&.current{
+								color: #009B63;
+								&::after{
+									content:"";
+									width: 5px;
+									height: calc(100% - 6px) ;
+									background: #009B63;
+									position: absolute;
+									right: 3px;
+									top:3px;
+									z-index: 2;
+								}
+							}
+							@include mx.hover {
+								background: rgba(255, 255, 255, 1);
+							}
+						}
+					}
+				}
+			}
+			.copyright {
+				background: none;
+				width: calc(100% - 10px);
+				@include mx.fs(11);
+				font-weight: 300;
+				line-height: 1.5;
+				color: #fff;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10px;
+				z-index: 0;
+			}
+		}
+	}
+}

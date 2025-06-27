@@ -1,0 +1,19 @@
+var checkContents = {
+	"startDate_1" : {
+		FieldName : "開始日付"
+		, Contents : [
+			{"date_requireCheck" : ""}
+			, {"valid_dateCheck": ""}
+		]
+	},
+	"endDate_1" : {
+		FieldName : "終了日付"
+		, Contents : [
+			{"date_requireCheck" : ""}
+			, {"valid_dateCheck": ""}
+			,{"valid_date_consistency_Check" : ["startDate_1","endDate_1"]}
+			
+		]
+	},
+	
+};

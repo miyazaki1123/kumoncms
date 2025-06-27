@@ -1,0 +1,14 @@
+var checkContents = {
+	"upfile" : {
+		FieldName : "ファイル"
+		, Contents : [
+			{"requiredCheck" : ""}
+		]
+	},
+};
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+var checkContents = {
+	"album_name" : {
+		FieldName : "アルバム名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"max_lengthCheck": "50"}
+		]
+	},
+	"album_note" : {
+		FieldName : "備考"
+		, Contents : [
+			{"max_lengthCheck": "200"}
+		]
+	},
+	"blog_id" : {
+		FieldName : "ブログ"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	}
+};
+
+
+
+
+
+

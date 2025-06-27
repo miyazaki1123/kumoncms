@@ -1,0 +1,40 @@
+var checkContents = {
+	"blog_name" : {
+		FieldName : "ブログ名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"max_lengthCheck": "50"}
+		]
+	},
+	"blog_remarks" : {
+		FieldName : "備考"
+		, Contents : [
+			{"max_lengthCheck": "200"}
+		]
+	},
+	"term" : {
+		FieldName : "期"
+		, Contents : [
+			{"numberCheck" : ""}
+		]
+	},
+	"user_id" : {
+		FieldName : "ID"
+		, Contents : [
+			{"max_lengthCheck": "10"}
+		]
+	},
+	"password" : {
+		FieldName : "パスワード"
+		, Contents : [
+			{"min_lengthCheck" : "8"}
+			,{"max_lengthCheck": "15"}
+		]
+	},
+};
+
+
+
+
+
+

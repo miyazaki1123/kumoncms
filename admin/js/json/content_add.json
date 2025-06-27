@@ -1,0 +1,71 @@
+var checkContents = {
+	"report_title" : {
+		FieldName : "記事タイトル"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "400"}
+		]
+	},
+	"image1" : {
+		FieldName : "イメージ画像１"
+		, Contents : [
+			{"max_byteCheck" : "200"}
+			,{"checkExtention" : "pdf jpg png jpeg gif"}
+
+		]
+	},
+	"image2" : {
+		FieldName : "イメージ画像２"
+		, Contents : [
+			{"max_byteCheck" : "200"}
+			,{"checkExtention" : "pdf jpg png jpeg gif"}
+		]
+	},
+	"image3" : {
+		FieldName : "イメージ画像３"
+		, Contents : [
+			{"max_byteCheck" : "200"}
+			,{"checkExtention" : "pdf jpg png jpeg gif"}
+		]
+	},
+	"image4" : {
+		FieldName : "イメージ画像４"
+		, Contents : [
+			{"max_byteCheck" : "200"}
+			,{"checkExtention" : "pdf jpg png jpeg gif"}
+		]
+	},
+	"image5" : {
+		FieldName : "イメージ画像５"
+		, Contents : [
+			{"max_byteCheck" : "200"}
+			,{"checkExtention" : "pdf jpg png jpeg gif"}
+		]
+	},
+	"user_name" : {
+		FieldName : "作成者名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "40"}
+		]
+	},
+	"startDate_1" : {
+		FieldName : "投稿日"
+		, Contents : [
+			{"date_requireCheck" : ""}
+			, {"valid_dateCheck": ""}
+		]
+	},
+	"blog_id" : {
+		FieldName : "ブログ"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	},
+	"status" : {
+		FieldName : "ステータス"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	}
+};

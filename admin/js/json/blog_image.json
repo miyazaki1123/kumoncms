@@ -1,0 +1,20 @@
+var checkContents = {
+	"upfile" : {
+		FieldName : "画像ファイル"
+		, Contents : [
+			{"requiredCheck" : ""}
+		]
+	},
+	"blog_id" : {
+		FieldName : "ブログ"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	},
+};
+
+
+
+
+
+

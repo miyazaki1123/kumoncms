@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+#wrap {
+	width:945px;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+* html #wrap {
+    height: 1%;
+}
+
+
+.loginTable {
+    margin : 10px auto;
+	width:30%;
+	border:0px solid #000000;
+}
+
+.loginTable td {
+	padding:5px 0;
+}
+
+
+.msg {
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+#wrap_p {
+	width:750px;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+.imagelist{
+	width: 450px;
+    margin-left : 10px;
+    
+}
+
+.imagelist ul {
+	width: 850px;
+	margin-right: -10px;
+	overflow: hidden;
+}
+
+.imagelist ul li {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	padding:5px 5px 5px 5px;
+}
+

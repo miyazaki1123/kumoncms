@@ -1,0 +1,495 @@
+<% if (meta.title != 'ログイン' ) { %>
+<header class="site-header">
+  <div class="site-header__top">
+    <div class="site-title">
+      <h1>公文国際学園中等部・高等部　<br>保護者専用サイト</h1>
+    </div>
+    <div class="nav-account pc">
+      <div>
+        <strong>中学(高校)年組生徒氏名様</strong>
+      </div>
+      <menu>
+        <li><a href="<%= meta.absPath %>account.html"><i class="icon icon--account"></i>アカウント設定</a></li>
+        <li><a href="<%= meta.absPath %>login.html"><i class="icon icon--logout"></i>ログアウトする</a></li>
+      </menu>
+    </div>
+  </div>
+  <div class="logo--kumon">
+    <a href="/">
+      <%- include('./assets/ejs/site-logo.ejs') %>
+    </a>
+  </div>
+  <nav class="global-nav">
+    <menu class="global-nav__mainmenu">
+      <li <% if (meta.cat=='HOME' ) { %>class="current"<% } %>>
+        <div>
+          <a href="./">
+            <i class="icon icon--home"></i><span>HOME</span>
+          </a>
+        </div>
+       </li>
+      <li>
+        <div>
+          <a href="">
+            <i class="icon icon--info"></i>
+            <span><span class="fs--s">学校から<span class="pc">の</span></span><span
+                class="pc">お知らせ</span></span>
+            </a>
+            <menu class="global-nav__submenu">
+              <li>
+                <a href="">
+                  <i class="icon icon--info"></i>
+                  <span><span class="fs--s">学校から<span class="pc">の</span></span><span
+                      class="pc">お知らせ</span></span>
+                  </a>
+              </li>
+              <li>
+                <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+                <div class="slide--content">
+                  <menu>
+                    <li><a href="">生徒手帳</a></li>
+                  </menu>
+                  <menu>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                  </menu>
+                </div>
+              </li>
+              <li>
+                <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+                <div class="slide--content">
+                  <menu>
+                    <li><a href="">生徒相談室より</a></li>
+                  </menu>
+                  <menu>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                  </menu>
+                </div>
+              </li>
+              <li>
+                <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+                <div class="slide--content">
+                  <menu>
+                    <li><a href="">生徒相談室より</a></li>
+                  </menu>
+                  <menu>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                    <li><a href="">小カテゴリメニュー</a></li>
+                  </menu>
+                </div>
+              </li>
+            </menu>
+        </div>
+      </li>
+      <li <% if (meta.cat=='学年' ) { %>class="current"<% } %>>
+        <div>
+          <a href="<%= meta.absPath %>school.html">
+            <i class="icon icon--groups"></i><span>学年</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="<%= meta.absPath %>school.html">
+                <i class="icon icon--groups"></i><span>学年</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>29期（中3）</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">29期（中3）</a></li>
+                </menu>
+                <menu>
+                  <li>
+                    <button class="btn--slide"><i class="icon icon--circle"></i>2023</button>
+                    <div class="slide--content">
+                      <menu>
+                        <li><a href="">29期学年だより</a></li>
+                        <li><a href="">学年主任より</a></li>
+                        <li><a href="">学年担任より</a></li>
+                        <li><a href="">学年だより</a></li>
+                        <li><a href="">3A</a></li>
+                        <li><a href="">3B</a></li>
+                        <li><a href="">3C</a></li>
+                        <li><a href="">教科より</a></li>
+                      </menu>
+                    </div>
+                  </li>
+                  <li>
+                    <button class="btn--slide"><i class="icon icon--circle"></i>2022</button>
+                    <div class="slide--content">
+                      <menu>
+                        <li><a href="">29期学年だより</a></li>
+                        <li><a href="">学年主任より</a></li>
+                        <li><a href="">学年担任より</a></li>
+                        <li><a href="">学年だより</a></li>
+                        <li><a href="">2A</a></li>
+                        <li><a href="">2B</a></li>
+                        <li><a href="">2C</a></li>
+                        <li><a href="">教科より</a></li>
+                      </menu>
+                    </div>
+                  </li>
+                  <li>
+                    <button class="btn--slide"><i class="icon icon--circle"></i>2021</button>
+                    <div class="slide--content">
+                      <menu>
+                        <li><a href="">29期学年だより</a></li>
+                        <li><a href="">学年主任より</a></li>
+                        <li><a href="">学年担任より</a></li>
+                        <li><a href="">学年だより</a></li>
+                        <li><a href="">1A</a></li>
+                        <li><a href="">1B</a></li>
+                        <li><a href="">1C</a></li>
+                        <li><a href="">教科より</a></li>
+                      </menu>
+                    </div>
+                  </li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+        </div>
+      </li>
+      <li <% if (meta.cat=='公文式' ) { %>class="current"<% } %>>
+        <div>
+          <a href="<%= meta.absPath %>kumon.html">
+            <i class="icon icon--kumon"></i><span>公文式</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="<%= meta.absPath %>kumon.html">
+                <i class="icon icon--kumon"></i><span>公文式</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒手帳</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="">
+            <i class="icon icon--dormitory"></i><span>寮</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="">
+                <i class="icon icon--dormitory"></i><span>寮</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒手帳</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+        </div>
+      </li>
+      <li <% if (meta.cat=='アルバム' ) { %>class="current"<% } %>>
+        <div>
+          <a href="<%= meta.absPath %>album.html">
+            <i class="icon icon--album"></i><span>アルバム</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="">
+            <i class="icon icon--busyo"></i><span>各部署</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="">
+                <i class="icon icon--busyo"></i><span>各部署</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒手帳</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="<%= meta.absPath %>album.html">
+            <i class="icon icon--document"></i><span>書類</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="<%= meta.absPath %>album.html">
+                <i class="icon icon--document"></i><span>書類</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒手帳</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="">
+            <i class="icon icon--document"></i><span>その他</span>
+          </a>
+          <menu class="global-nav__submenu">
+            <li>
+              <a href="">
+                <i class="icon icon--document"></i><span>その他</span>
+              </a>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒手帳</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒手帳</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+            <li>
+              <button class="btn--slide"><i class="icon icon--circle"></i>生徒相談室より</button>
+              <div class="slide--content">
+                <menu>
+                  <li><a href="">生徒相談室より</a></li>
+                </menu>
+                <menu>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                  <li><a href="">小カテゴリメニュー</a></li>
+                </menu>
+              </div>
+            </li>
+          </menu>
+
+        </div>
+      </li>
+    </menu>
+  </nav>
+  <div class="nav-toggle-wrap" id="sp-gnav-toggle">
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+<% } %>

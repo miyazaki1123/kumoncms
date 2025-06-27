@@ -1,0 +1,413 @@
+@charset "UTF-8";
+/****************************
+LaMaisonBlanche
+common.css
+*****************************/
+html {
+overflow:scroll;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+body {
+height: 100%;
+background-color:#f2f2f2;
+color:#4e4e4e;
+
+margin: 0;
+padding: 0;
+}
+
+#site_box {
+width : 960px;
+height:auto;
+margin:0 auto 0;
+padding-top:0;
+padding-bottom:0;
+background-color:#ffffff;
+border:1px solid #e0e0e0;
+}
+
+/*-------------------------
+Header
+--------------------------*/
+#header{
+width : 960px;
+padding-bottom:0;
+margin:0 auto;
+}
+#header a {
+display: block;
+width: 926px ;
+height:109px ;
+}
+/*-------------------------
+--------------------------*/
+#menu {
+width: 120px ;
+padding-top:15px;
+padding-left:10px;
+float : left;
+}
+
+/*-------------------------
+--------------------------*/
+#main{
+width: 801px;
+padding-top:20px;
+padding-left:10px;
+padding-bottom:50px;
+float : left;
+}
+
+#news{
+    width: 799px;
+    border-width:1px;
+    border-right-width:5px;
+    border-bottom-width:5px;
+    border-color:lightgray;
+    border-style : solid;
+    border-top-style : none;
+    border-right-style : solid;
+    border-bottom-style : solid;
+    float : left;
+    padding : 0px;
+    margin-top : -5px;
+}
+
+
+
+
+#cal{
+    width: 799px;
+    border-width:1px;
+    border-color:lightgray;
+    border-style : solid;
+    border-top-style : none;
+    border-right-style : solid;
+    border-bottom-style : solid;
+    margin-top : -0px;
+}
+
+#calendar {
+    width: 725px;
+    margin : 10px auto;
+    padding-top: 10px;
+}
+
+#album{
+    width: 799px;
+    border-width:1px;
+    border-color:lightgray;
+    border-style : solid;
+    border-top-style : none;
+    border-right-style : solid;
+    border-bottom-style : solid;
+}
+
+#login {
+    width: 960px;
+    padding-top: 10px;
+}
+
+#infobox {
+width: 500px;
+height: 70px;
+overflow: auto;
+    padding: 5px;
+        border-width:1px;
+    border-color:lightgray;
+    border-style : solid;
+        margin : 10px auto;
+}
+
+#infotxt {
+width: 500px;
+height: 5px;
+    padding: 1px;
+        margin : 10px auto;
+}
+
+/*-------------------------
+footer
+--------------------------*/
+#footer{
+background-image:url("/kumon/image/footer.png");
+bottom:0px;
+
+width:960px;height:81px;
+clear:both;
+
+}
+
+#footer p{
+text-align:center;
+line-height:30%;
+font-size:75%;
+}
+
+ul.menu{
+    width:100%;
+    margin-top:0px;
+    font-size:12px;
+    padding-left:0;
+    margin-left:0;
+}
+
+
+li.menu{
+    list-style:none;
+    margin:3px;
+    padding:3px;
+    width:110px;
+    float:left;
+    border-width:1px;
+    border-color:lightgray;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+
+li.sel{
+
+    list-style:none;
+    margin:3px;
+    padding:3px;
+    width:110px;
+    float:left;
+    border-width:2px;
+    border-color:green;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+
+}
+
+li.category{
+    list-style:none;
+    margin-left:12px;
+    padding:5px;
+    width:95px;
+    float:left;
+    border-width:1px;
+    border-color:lightgray;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+li.category_on{
+    list-style:none;
+    margin-left:12px;
+    padding:5px;
+    width:95px;
+    float:left;
+    border-width:1px;
+    border-color:white;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+    color : white;
+    background-color:green;
+}
+
+ul.tab{
+    margin-top:0px;
+    padding-left:0;
+    margin-left:0;
+
+}
+
+ul.tab li{
+    list-style:none;
+    float:left;
+}
+
+table.report{
+width : 760px;
+border-collapse:collapse;
+border-spacing:0;
+background-color:#ffffff;
+empty-cells:show;
+margin: 20px 0px 20px 10px;
+font-size:100%;
+border-style : none;
+}
+
+
+.report01 {
+border-style : none;
+padding:5px;
+text-align: left;
+vertical-align:top;
+width : 100px;
+font-size:90%;
+}
+
+.tr01{
+    border-width:1px;
+    border-color:lightgray;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+
+table.report_sub{
+margin: 5px;
+border-collapse:collapse;
+border-spacing:0;
+background-color:#ffffff;
+empty-cells:show;
+border-style : none;
+width : 100%
+}
+
+.report02{
+width : 400px;
+padding:2px;
+text-align: left;
+vertical-align:top;
+font-size:120%;
+    border-width:1px;
+    border-color:green;
+    border-top-style : none;
+    border-bottom-style : dotted ;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+.report03{
+border-style : none;
+padding:2px;
+text-align: left;
+vertical-align:top;
+font-size:90%;
+}
+
+.report04{
+border-style : none;
+padding:2px;
+text-align: right;
+vertical-align:top;
+font-size:90%;
+}
+
+.report05{
+border-style : none;
+padding:2px;
+text-align: right;
+vertical-align:bottom;
+font-size:80%;
+color:green;
+}
+<!--フォーム追加start-->
+table.detail{
+width : 750px;
+border-collapse:collapse;
+border-spacing:0;
+background-color:#ffffff;
+empty-cells:show;
+margin: 20px 0px 20px 10px;
+font-size:90%;
+border-style : none;
+}
+
+.inform{
+border		: 1px solid;
+cellpadding : 5px;
+bordercolor : #7f7f7f;
+margin		: 20px 50px 10px 20px;
+}
+
+.form01 {
+background-color: #eeeeee;
+font-size		: 100%;
+font-weight		: bold;
+padding			: 5px;
+border			: 1px solid;
+width			: 300px;
+height			: 20px;
+}
+
+.form02 {
+font-size	: 100%;
+padding		: 5px;
+border		: 1px solid;
+line-height	: 1.5;
+}
+
+.form_b {
+margin		: 0px 0px 0px 690px;
+}
+
+.form_p {
+color	: #7d7d7d;
+}
+
+.detail01 {
+border-style : none;
+padding:5px;
+text-align: left;
+vertical-align:top;
+width : 200px;
+font-size:90%;
+}
+<!--フォーム追加end-->
+.tr01{
+    border-width:0px;
+    border-color:lightgray;
+    border-top-style : none;
+    border-bottom-style : none;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+
+table.detail_sub{
+margin: 5px;
+border-collapse:collapse;
+border-spacing:0;
+background-color:#ffffff;
+empty-cells:show;
+border-style : none;
+width : 100%
+}
+
+.detail02{
+width : 520px;
+padding:2px;
+text-align: left;
+vertical-align:top;
+font-size:180%;
+    border-width:1px;
+    border-color:blue;
+    border-top-style : none;
+    border-bottom-style : solid ;
+    border-left-style : none;
+    border-right-style : none;
+}
+
+.detail03{
+border-style : none;
+padding:10px;
+text-align: left;
+vertical-align:top;
+font-weight:bold;
+font-size:120%;
+}
+
+.detail04{
+border-style : none;
+padding:2px;
+text-align: left;
+vertical-align:top;
+font-size:100%;
+}

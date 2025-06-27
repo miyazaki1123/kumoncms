@@ -1,0 +1,29 @@
+var checkContents = {
+	"category_name" : {
+		FieldName : "カテゴリー名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"max_lengthCheck": "50"}
+		]
+	},
+	"fiscal_year" : {
+		FieldName : "年度"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"numberCheck" : ""}
+		]
+	},
+	"sort_no" : {
+		FieldName : "表示順"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"numberCheck" : ""}
+		]
+	}
+};
+
+
+
+
+
+

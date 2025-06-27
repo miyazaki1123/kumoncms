@@ -1,0 +1,9 @@
+var checkContents = {
+	"data_groupname" : {
+		FieldName : "グループ名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "20"}
+		]
+	}
+};

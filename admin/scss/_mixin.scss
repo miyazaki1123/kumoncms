@@ -1,0 +1,212 @@
+$pc_xx: 1500px;
+$pc: 769px;
+$pc-tb: 1021px;
+$tb: 1020px;
+$sp: 768px;
+$sp_s: 375px;
+$sp_ss: 360px;
+$root-font-size: 16;
+@mixin max_pc {
+  @media (max-width: ($pc_xx)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }  
+}
+@mixin pc-tb {
+  @media (min-width: ($pc-tb)) {
+    @content;
+  }
+}
+@mixin tb {
+  @media (max-width: ($tb)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+@mixin sp_s {
+  @media (max-width: ($sp_s)) {
+    @content;
+  }
+}
+@mixin sp_ss {
+  @media (max-width: ($sp_ss)) {
+    @content;
+  }
+}
+@mixin print{
+  @media print {
+    @content;
+  }
+}
+@mixin hover($sec:0.3,$ease:ease) {
+  @include pc {
+    transition: all $sec+s $ease;
+    cursor: pointer;
+    &:hover {
+      @content;
+    }
+  }
+}
+@mixin cover{
+	object-fit: cover;
+	object-position: center;
+	font-family: 'object-fit: cover; object-position: center;';
+}
+@mixin max_w($w) {
+  @media (max-width: ($w+px)) {
+    @content;
+  }
+}
+@mixin min_w($w) {
+  @media (min-width: ($w+px)) {
+    @content;
+  }
+}
+@mixin max_h($h) {
+  @media (max-height: ($h+px)) {
+    @content;
+  }
+}
+@mixin min_h($h) {
+  @media (min-height: ($h+px)) {
+    @content;
+  }
+}
+
+@mixin fs($font-size-px,$font-size-sp-px:null,$font-w:null,$font-c:null) {
+  
+  font-size: calc( $font-size-px / $root-font-size * 1rem );
+ 
+  @if($font-size-sp-px){
+    @include sp {
+      font-size: calc( $font-size-sp-px / $root-font-size * 1rem );
+    }
+  }
+  @if($font-w){
+    font-weight: $font-w;
+  }
+  @if($font-c){
+      color: $font-c;
+  }
+}
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+
+
+@mixin icon_circle($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg height="9.11" viewBox="0 0 7.32 9.11" width="7.32" xmlns="http://www.w3.org/2000/svg"><path d="m4.65 4.55-4.65 2.52v2.04l7.32-4.17v-.76l-7.32-4.18v2.04z" fill="%23#{$color}"/></svg>');
+  background-size: content;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_search($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg height="52.07" viewBox="0 0 29.16 52.07" width="29.16" xmlns="http://www.w3.org/2000/svg"><path d="m29.16 14.58c0-8.04-6.54-14.58-14.58-14.58s-14.58 6.54-14.58 14.58c0 6.62 4.43 12.21 10.49 13.99-.64.84-1.04 1.88-1.04 3.02v15.49c0 2.76 2.24 5 5 5h.6c2.76 0 5-2.24 5-5v-15.49c0-1.17-.42-2.24-1.1-3.09 5.91-1.86 10.21-7.39 10.21-13.91zm-14.58 9.54c-5.27 0-9.54-4.27-9.54-9.54s4.27-9.54 9.54-9.54 9.54 4.27 9.54 9.54-4.27 9.54-9.54 9.54z" fill="%23#{$color}"/></svg>');
+  background-size: content;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_paste($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="33.817" height="34.684" viewBox="0 0 33.817 34.684"><path id="markdown_paste_FILL0_wght400_GRAD0_opsz24" d="M6.468,35.684a3.424,3.424,0,0,1-2.428-1.041A3.424,3.424,0,0,1,3,32.216V7.937A3.149,3.149,0,0,1,4.041,5.509,3.424,3.424,0,0,1,6.468,4.468h7.284A3.828,3.828,0,0,1,15.66,2.041,6.722,6.722,0,0,1,18.608,1,4.842,4.842,0,0,1,21.73,2.041a6.241,6.241,0,0,1,1.908,2.428h7.11a3.149,3.149,0,0,1,2.428,1.041,3.149,3.149,0,0,1,1.041,2.428v8.671H30.748V7.937H27.279v5.2H9.937v-5.2H6.468V32.216H15.14v3.468ZM18.608,7.937a1.574,1.574,0,0,0,1.214-.52,1.574,1.574,0,0,0,.52-1.214,1.574,1.574,0,0,0-.52-1.214,1.676,1.676,0,0,0-2.428,0,1.574,1.574,0,0,0-.52,1.214,1.574,1.574,0,0,0,.52,1.214A1.574,1.574,0,0,0,18.608,7.937Zm9.191,7.8-9.018,11.1H36.817ZM31.441,25.8h-7.11v9.538h7.11Z" transform="translate(-3 -1)" fill="%23#{$color}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin icon_arrow2($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="18.12" height="33.414" viewBox="0 0 18.12 33.414"><path d="M12898.751-781.729l16,16-16,16" transform="translate(-12898.044 782.436)" fill="none" stroke="%23#{$color}" stroke-width="2"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin icon_arrow3($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12"><path fill="%23#{$color}" fill-rule="evenodd" d="m9.05,5.29c.22.21.57.21.79,0,.21-.21.22-.55,0-.76h0L5.39.16c-.22-.21-.57-.21-.79,0L.16,4.52c-.21.21-.22.55-.01.76h.01c.22.22.57.22.79.01L5,1.32l4.05,3.98h0Zm0,6.55c.22.21.57.21.79,0,.21-.21.22-.55,0-.76h0l-4.45-4.36c-.22-.21-.57-.21-.79,0L.16,11.07c-.21.21-.22.55,0,.76H.16c.22.21.57.21.79,0l4.05-3.98,4.05,3.98h0Z"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin icon_facebook($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g id="icon-fb" transform="translate(-20218 605)"><rect width="32" height="32" transform="translate(20218 -605)" fill="none"/><path id="icon-fb-2" data-name="icon-fb" d="M9,8H6v4H9V24h5V12h3.642L18,8H14V6.333C14,5.378,14.192,5,15.115,5H18V0H14.192C10.6,0,9,1.583,9,4.615Z" transform="translate(20222 -601)" fill="%23#{$color}"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_instagram($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g id="icon-ig" transform="translate(-20270 605)"><rect width="32" height="32" transform="translate(20270 -605)" fill="none"/><path id="icon-ig-2" data-name="icon-ig" d="M12,2.163c3.2,0,3.584.012,4.85.07,3.252.148,4.771,1.691,4.919,4.919.058,1.265.069,1.645.069,4.849s-.012,3.584-.069,4.849c-.149,3.225-1.664,4.771-4.919,4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.7-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.013-3.583.07-4.849C2.381,3.924,3.9,2.38,7.151,2.232,8.417,2.175,8.8,2.163,12,2.163ZM12,0C8.741,0,8.333.014,7.053.072,2.7.272.273,2.69.073,7.052.014,8.333,0,8.741,0,12s.014,3.668.072,4.948c.2,4.358,2.618,6.78,6.98,6.98C8.333,23.986,8.741,24,12,24s3.668-.014,4.948-.072c4.354-.2,6.782-2.618,6.979-6.98C23.986,15.668,24,15.259,24,12s-.014-3.667-.072-4.947c-.2-4.354-2.617-6.78-6.979-6.98C15.668.014,15.259,0,12,0Zm0,5.838A6.163,6.163,0,1,0,18.162,12,6.162,6.162,0,0,0,12,5.838ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.406,4.155a1.44,1.44,0,1,0,1.439,1.44A1.441,1.441,0,0,0,18.406,4.155Z" transform="translate(20274 -601)" fill="%23#{$color}"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_youtube($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g id="icon-yt" transform="translate(-20388 605)"><rect width="32" height="32" transform="translate(20388 -605)" fill="none"/><path id="icon-yt-2" data-name="icon-yt" d="M19.615,3.184c-3.6-.246-11.631-.245-15.23,0C.488,3.45.029,5.8,0,12c.029,6.185.484,8.549,4.385,8.816,3.6.245,11.626.246,15.23,0C23.512,20.55,23.971,18.2,24,12,23.971,5.815,23.516,3.451,19.615,3.184ZM9,16V8l8,3.993Z" transform="translate(20392 -601)" fill="%23#{$color}"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_line($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g id="icon-line" transform="translate(-20484 605)"><rect width="32" height="32" transform="translate(20484 -605)" fill="none"/><path id="icon-line-2" data-name="icon-line" d="M19,24H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0H19a5,5,0,0,1,5,5V19A5,5,0,0,1,19,24Zm1-12.508C20,7.912,16.411,5,12,5S4,7.912,4,11.492c0,3.209,2.846,5.9,6.691,6.4.26.056.615.172.7.4a1.636,1.636,0,0,1,.026.723l-.114.685c-.035.2-.161.791.693.431a25.843,25.843,0,0,0,6.286-4.645h0A5.771,5.771,0,0,0,20,11.492ZM9.022,13.559H6.78l-.108-.043h0l0,0L6.624,13.4V9.918a.156.156,0,0,1,.156-.156h.562a.156.156,0,0,1,.155.156v2.768H9.022a.155.155,0,0,1,.155.156V13.4a.155.155,0,0,1-.155.156Zm8.314,0H15.094l-.108-.043,0-.005-.044-.107V9.918l.044-.107,0-.005.108-.044h2.242a.155.155,0,0,1,.155.156v.561a.155.155,0,0,1-.155.156H15.811v.589h1.525a.155.155,0,0,1,.155.156v.561a.155.155,0,0,1-.155.156H15.811v.589h1.525a.155.155,0,0,1,.155.156V13.4a.155.155,0,0,1-.155.156Zm-6.961,0H9.813a.155.155,0,0,1-.156-.155V9.918a.156.156,0,0,1,.156-.156h.562a.155.155,0,0,1,.155.156V13.4A.155.155,0,0,1,10.375,13.559Zm1.418,0h-.561a.155.155,0,0,1-.156-.155V9.918a.156.156,0,0,1,.156-.156h.574l.015,0,.009,0,.015,0,.005,0,.014.006.013.008.008.005.012.01,0,0,.01.011.013.015,1.6,2.158V9.918a.156.156,0,0,1,.156-.156h.561a.156.156,0,0,1,.156.156V13.4a.156.156,0,0,1-.156.155h-.561l-.04-.005h0l-.016-.005-.007,0-.012-.006-.01-.006h0l-.04-.039-1.6-2.16V13.4A.156.156,0,0,1,11.793,13.559Z" transform="translate(20488 -601)" fill="%23#{$color}" fill-rule="evenodd"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_hige($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 21.5L5.5 0H29.5L0 21.5Z" fill="%23#{$color}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_circlearrow($color1,$color2) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="50" height="50" rx="25" fill="%23#{$color1}"/><path d="M17.8004 24.1265C18.0114 24.5896 18.0134 25.2476 17.8054 25.7146L12.5422 37.5L37.5 24.9993L12.5 12.5L17.8004 24.1265Z" fill="%23#{$color2}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_yerrow_arrow($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.2403 9.30123C4.40908 9.6717 4.41069 10.198 4.24432 10.5717L0.0337553 20L20 9.99947L0 0L4.2403 9.30123Z" fill="%23#{$color}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_close($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.353553" y1="0.646447" x2="12.3536" y2="12.6464" stroke="%23#{$color}"/><line x1="12.3536" y1="1.35355" x2="0.353554" y2="13.3536" stroke="%23#{$color}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_email($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-1.90735e-06 1.69189V21.4999H30V1.69189L17.5072 12.6425C16.7881 13.2724 15.8965 13.5825 14.9952 13.5825C14.094 13.5825 13.2023 13.2724 12.4832 12.6425L-1.90735e-06 1.69189Z" fill="%23#{$color}"/><path d="M0.680618 0.5L13.3652 11.6154C14.2952 12.4294 15.695 12.4294 16.625 11.6154L29.3096 0.5H0.680618Z" fill="%23#{$color}"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_close_circle($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="%23#{$color}"><path d="m0 8.04c.02 4.12 3.16 7.51 7.18 7.92-4.01-.41-7.16-3.8-7.18-7.92z"/><path d="m8 0c-4.42 0-8 3.58-8 8 0-4.41 3.59-8 8-8s8 3.59 8 8c0-4.42-3.58-8-8-8z"/><path d="m8.82 15.96c4.02-.41 7.16-3.79 7.18-7.92-.02 4.12-3.17 7.51-7.18 7.92z"/></g><path d="m8 0c-4.41 0-8 3.59-8 8s0 .03 0 .04c.02 4.12 3.17 7.51 7.18 7.92.27.03.54.04.82.04s.55-.01.82-.04c4.02-.41 7.16-3.8 7.18-7.92 0-.01 0-.03 0-.04 0-4.41-3.59-8-8-8zm0 15c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z" fill="#707070"/><path d="m12.82 3.13c-.39-.39-1.02-.39-1.41 0l-3.43 3.43-3.43-3.43c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l3.43 3.43-3.43 3.43c-.39.39-.39 1.02 0 1.41.2.2.45.29.71.29s.51-.1.71-.29l3.43-3.43 3.43 3.43c.2.2.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.02 0-1.41l-3.43-3.43 3.43-3.43c.39-.39.39-1.02 0-1.41z" fill="#707070"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin icon_eye($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23#{$color}"><path d="M480.09-336.92q67.99 0 115.49-47.59t47.5-115.58q0-67.99-47.59-115.49t-115.58-47.5q-67.99 0-115.49 47.59t-47.5 115.58q0 67.99 47.59 115.49t115.58 47.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.05 172q-137.97 0-251.43-76.12Q115.16-372.23 61.54-500q53.62-127.77 167.02-203.88Q341.97-780 479.95-780q137.97 0 251.43 76.12Q844.84-627.77 898.46-500q-53.62 127.77-167.02 203.88Q618.03-220 480.05-220ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+@mixin icon_eye_close($color) {
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23#{$color}"><path d="M630.92-441.08 586-486q9-49.69-28.35-89.35Q520.31-615 466-606l-44.92-44.92q13.54-6.08 27.77-9.12 14.23-3.04 31.15-3.04 68.08 0 115.58 47.5T643.08-500q0 16.92-3.04 31.54-3.04 14.61-9.12 27.38Zm127.23 124.46L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-46.61-46.61q37.92-15.08 77.46-22.23Q438.39-780 480-780q140.61 0 253.61 77.54T898.46-500q-22.23 53.61-57.42 100.08-35.2 46.46-82.89 83.3Zm32.31 231.39L628.62-245.85q-30.77 11.39-68.2 18.62Q523-220 480-220q-141 0-253.61-77.54Q113.77-375.08 61.54-500q22.15-53 57.23-98.88 35.08-45.89 77.23-79.58l-110.77-112 42.16-42.15 705.22 705.22-42.15 42.16Zm-552.3-551.08q-31.7 25.23-61.66 60.66Q146.54-540.23 128-500q50 101 143.5 160.5T480-280q27.31 0 54.39-4.62 27.07-4.61 45.92-9.53L529.69-346q-10.23 4.15-23.69 6.61-13.46 2.47-26 2.47-68.08 0-115.58-47.5T316.92-500q0-12.15 2.47-25.42 2.46-13.27 6.61-24.27l-87.84-86.62ZM541-531Zm-131.77 65.77Z"/></svg>');
+  background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+}

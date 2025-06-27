@@ -1,0 +1,137 @@
+
+<footer class="site-footer">
+  <div class="site-footer__pc">
+    <menu class="site-footer__nav">
+      <ul>
+        <li>
+          <a href="<%= meta.absPath %>privacy-policy.html" class="mincho"><i class="icon--circle"></i>プライバシーポリシー</a>
+        </li>
+      </ul>
+    </menu>
+    <div class="site-footer__link">
+      <button class="btn--close close-footermenu sp"></button>
+      <menu>
+        <li>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <picture>
+              <source media="(min-width: 768px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0101@2x.jpg" />
+              <source media="(max-width: 767px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0101_sp.jpg" />
+              <img src="<%= meta.absPath %>assets/img/footer_btn_0101@x2.jpg" alt="公文国際学園ホームページ">
+            </picture>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <picture>
+              <source media="(min-width: 768px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0102@2x.jpg" />
+              <source media="(max-width: 767px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0102_sp.jpg" />
+              <img src="<%= meta.absPath %>assets/img/footer_btn_0102@x2.jpg" alt="スイス公文学園高等部">
+            </picture>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <picture>
+              <source media="(min-width: 768px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0103@2x.jpg" />
+              <source media="(max-width: 767px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0103_sp.jpg" />
+              <img src="<%= meta.absPath %>assets/img/footer_btn_0103@x2.jpg" alt="公文学園PTA">
+            </picture>
+          </a>
+        </li>
+        <li class="sp">
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <picture>
+              <source media="(min-width: 768px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0104@2x.jpg" />
+              <source media="(max-width: 767px)" srcset="<%= meta.absPath %>assets/img/footer_btn_0104_sp.jpg" />
+              <img src="<%= meta.absPath %>assets/img/footer_btn_0104@x2.jpg" alt="クラウド通知サービス">
+            </picture>
+          </a>
+        </li>
+      </menu>
+    </div>
+    <menu class="site-footer__contact">
+      <ul>
+        <li>
+          <a href="<%= meta.absPath %>contact.html"><img src="<%= meta.absPath %>assets/img/footer_btn_0201.svg"
+              alt="欠席 遅刻 早退 連絡"></a>
+        </li>
+      </ul>
+    </menu>
+  </div>
+  <% if (meta.title != 'ログイン' && meta.title != 'アカウント') { %>
+  <div class="footer-nav">
+    <button class="footer-nav__mymenu">
+      <i class="icon icon--account"></i>
+      <span>Myメニュー</span>
+    </button>
+    <div class="footer-nav__name">
+      <div>中学(高校)◯年◯組</div>
+      <div>生徒氏名様</div>
+    </div>
+    <button class="footer-nav__search">
+      <i class="icon icon--search"></i>
+    </button>
+  </div>
+  <% } %>
+</footer>
+<% if (meta.title != 'ログイン' && meta.title != 'アカウント') { %>
+<aside class="footer-menu">
+  <menu class="footer-menu__nav01">
+    <li>
+      <a href="<%= meta.absPath %>account.html" class="footer-menu__btn--account">
+        <div>
+          <i class="icon icon--account"></i>
+          <div><span>アカウント</span><span>（ログインID）</span></div>
+        </div>
+        <div>
+          <div>AAAAAAA</div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="<%= meta.absPath %>contact.html">
+        <i class="icon icon--paste"></i>
+        欠席 遅刻<br>早退 連絡
+      </a>
+    </li>
+    <li>
+      <a href="<%= meta.absPath %>change-email.html">
+        <i class="icon icon--mailcheck"></i>
+        メアド変更
+      </a>
+    </li>
+    <li>
+      <a href="<%= meta.absPath %>change-password.html">
+        <i class="icon icon--unlock"></i>
+        パスワード変更
+      </a>
+    </li>
+    <li>
+      <button id="btn--link">
+        <i class="icon icon--addlink"></i>
+        その他リンク
+      </button>
+    </li>
+  </menu>
+  <menu class="footer-menu__logout">
+    <li>
+      <a href="<%= meta.absPath %>logout.html">
+        <i class="icon icon--logout"></i>
+        ログアウト
+      </a>
+    </li>
+  </menu>
+  <menu class="footer-menu__nav02">
+    <li>
+      <a href="<%= meta.absPath %>privacy-policy.html" class="mincho"><i class="icon--circle"></i>プライバシーポリシー</a>
+    </li>
+  </menu>
+</aside>
+
+<aside class="footer-search">
+  <strong>フリーワード検索</strong>
+  <form class="search-form">
+    <input type="text"><input type="submit" value="検索">
+  </form>
+</aside>
+<% } %>

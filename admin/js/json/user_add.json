@@ -1,0 +1,30 @@
+var checkContents = {
+	"user_id" : {
+		FieldName : "ID"
+		, Contents : [
+			{"requiredCheck" : ""}
+			, {"max_lengthCheck": "10"}
+		]
+	},
+	"password" : {
+		FieldName : "パスワード"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"min_lengthCheck" : "8"}
+			,{"max_lengthCheck": "15"}
+		]
+	},
+	"user_name" : {
+		FieldName : "アカウント名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "40"}
+		]
+	}
+};
+
+
+
+
+
+

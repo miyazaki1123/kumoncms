@@ -1,0 +1,15 @@
+var checkContents = {
+	"form_name" : {
+		FieldName : "フォーム名"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "30"}
+		]
+	},
+	"blog_id" : {
+		FieldName : "ブログ"
+		, Contents : [
+			{"radio_requiredCheck" : ""}
+		]
+	}
+};

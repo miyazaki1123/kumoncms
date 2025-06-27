@@ -1,0 +1,15 @@
+var checkContents = {
+	"image_file" : {
+		FieldName : "画像ファイル"
+		, Contents : [
+			{"requiredCheck" : ""}
+		]
+	},
+	"banner_link" : {
+		FieldName : "リンク先"
+		, Contents : [
+			{"requiredCheck" : ""}
+			,{"max_byteCheck" : "200"}
+		]
+	}
+};
