@@ -564,7 +564,7 @@ function toggleSIdebar() {
     containerSelector: ".site-main",
     innerWrapperSelector: "#navi #navi__inner",
     topSpacing: 0,
-    bottomSpacing: 200
+    bottomSpacing: 100
   });
   window.addEventListener("load", function () {
     //sidebar.updateSticky();
@@ -591,7 +591,6 @@ observer.observe(document.body, {
   childList: true,
   subtree: true
 });
-document.addEventListener("DOMContentLoaded", function() {
+
      toggleSIdebar();
- });
 };
