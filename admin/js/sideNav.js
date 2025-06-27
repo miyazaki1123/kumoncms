@@ -564,7 +564,7 @@ function toggleSIdebar() {
     containerSelector: ".site-main",
     innerWrapperSelector: "#navi #navi__inner",
     topSpacing: 0,
-    bottomSpacing:100
+    bottomSpacing:0
   });
   window.addEventListener("load", function () {
     //sidebar.updateSticky();
