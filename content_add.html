@@ -154,6 +154,10 @@
 						<li><a href="/admin/index.php/data">データ一覧</a></li>
 						<li><a href="/admin/index.php/data/add">データ新規登録</a></li>
 					</ul>
+
+					<div id="Copyright">
+						<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
+					</div>
 				</nav>
 
 				
@@ -305,12 +309,12 @@
 										<h4>PDF</h4>
 										<div>
 											<p class="chk">
-											<label for="pdf_download_flg_0">
-												<input type="radio" name="pdf_download_flg" id="pdf_download_flg_0" value="0"
+											<label>
+												<input type="radio" name="pdf_download_flg" id="pdf_download_flg" value="0"
 												checked="">ダウンロード可
 											</label>
-											<label for="pdf_download_flg_1">
-												<input type="radio" name="pdf_download_flg" id="pdf_download_flg_1" value="1">ダウンロード不可
+											<label>
+												<input type="radio" name="pdf_download_flg" id="pdf_download_flg" value="1">ダウンロード不可
 											</label>
 										</p>
 										</div>
@@ -403,217 +407,184 @@
 								<div class="content--add-blog">
 									<h3>投稿</h3>
 									<div class="content--box content--add-blog__post">
-										<div>
-											<h4><span class="icon icon--where_to_vote"></span>ステータス</h4>
+										<div class="post post--status">
+											<div>
+												<h4><span class="icon icon--where_to_vote"></span>ステータス（状況）</h4>
 											<div class="chk">
-												<label for="status1">
-													<input type="radio" name="status" id="status1" value="0">公開
+												<label>
+													<input type="radio" name="status" id="status" value="0">公開
 												</label>
-												<label for="status2">
-													<input type="radio" name="status" id="status2" value="1">非公開
+												<label>
+													<input type="radio" name="status" id="status" value="1">非公開
 												</label>
-												<label for="status3">
-													<input type="radio" name="status" id="status3" value="2">下書き
+												<label>
+													<input type="radio" name="status" id="status" value="2">下書き
 												</label>
 											</div>
+											</div>
+											
 										</div>
-										<div>
+										<div class="post post--date">
+											<div>
 											<h4><span class="icon icon--calendar_month"></span>投稿日</h4>
+											<div class="post--date__ymd">
+												<div>
+													<input type="text" size="5" maxlength="4" name="start_date_1" id="startDate_1" value="2025">
+													<input type="text" size="3" maxlength="2" name="start_date_2" id="startDate_2"
+														value="06">
+													<input type="text" size="3" maxlength="2" name="start_date_3" id="startDate_3"
+														value="25">
+													
+												</div>
+												<a href="javascript:viewCalen(theMonth,'form1','calenArea1','start_date_1','start_date_2','start_date_3',0,120); void(0);" class="navi"><img src="/admin//image/icon_calender.svg" border="0" alt="カレンダーから選択"></a>
+							
+												<span
+													style="position:relative; display:block; float:left; z-index:1; left:70px; top:-250px">
+													<span id="calenArea1"></span></span>
+											</div>
+											<div class="post--date__time">
+												<h5>時刻設定</h5>
+												<input type="number" name="hour" size="2" maxlength="2" min="0" max="24">:<input type="number" name="minutes" size="2" maxlength="2" min="0" max="59">
+											</div>
+											</div>
 										</div>
 
-										<div>
-											<h4><span class="icon icon--paste"></span>作成者名</h4>
+										<div class="post post--auther">
+											<div>
+												<h4><span class="icon icon--person"></span>作成者名</h4>
+
+												<input type="text" size="40" name="user_name" class="t01 imeon" id="user_name">
+											</div>
+											
 										</div>
 									</div>
 								</div>
 
-							</section>
-
-
-
-
-							<img src="/admin//image/t_maker.png" border="0" alt="アカウント名">
-							<p class="text">
-								<input type="text" size="40" name="user_name" class="t01 imeon" id="user_name">
-							</p>
-
-							<br>
-
-							<img src="/admin//image/t_toukou.png" border="0" alt="投稿日">
-							<p class="text">
-								<input type="text" size="5" maxlength="4" name="start_date_1" id="startDate_1"
-									value="2025">年
-								<input type="text" size="3" maxlength="2" name="start_date_2" id="startDate_2"
-									value="06">月
-								<input type="text" size="3" maxlength="2" name="start_date_3" id="startDate_3"
-									value="25">日　
-								<a href="javascript:viewCalen(theMonth,'form1','calenArea1','start_date_1','start_date_2','start_date_3',0,120); void(0);"
-									class="navi">
-									<img src="/admin//image/calendar.gif" border="0" alt="カレンダーから選択"></a>
-							</p>
-							<span
-								style="position:relative; display:block; float:left; z-index:1; left:70px; top:-250px">
-								<span id="calenArea1"></span></span>
-							<br>
-
-							
-							<br>
-							
-
-
-
-							<div class="status">
-
-								<p class="chk">ステータス　　
-									<input type="radio" name="status" id="status" value="0">公開
-									<input type="radio" name="status" id="status" value="1">非公開
-									<input type="radio" name="status" id="status" value="2">下書き
-								</p>
-								<p class="btn">
-									<span>
-										<img src="/admin//image/tuika.png" border="0" alt="追加" id="_ADD"
-											class="cursor_finger">
-									</span>&nbsp;
-									<span>
-										<img src="/admin//image/pre.gif" border="0" alt="プレビュー" id="_PREV"
-											class="cursor_finger">
-									</span>
-								</p>
+								<div  class="flex j--center gap--40">
+									<button type="button" class="btn-border btn-border--green">
+										キャンセル
+									</button>
+									<button type="button" id="_PREV" class="btn-border btn-border--brown">
+										プレビュー
+									</button>
+									<button type="button" id="_ADD" class="btn-square btn-square--green">
+										登　録
+									</button>
 							</div>
+
+							<div class="flex gap--40">
+								<button type="button" id="_DELETE" class="btn-square btn-square--s btn-square--orange">
+										この記事を削除する
+									</button>
+							</div>
+							</section>
+							
 						</div>
 						<div class="right">
-
-
-							<ul class="genre">
-								<li><img id="master_blog" src="/admin/image/tab_blog_def.png" width="60" height="41"
-										onclick="showmaster('blog')"></li>
-							</ul>
+							<button type="button" class="toggle-genre1"><span class="icon icon--gray icon--settings"></span>表示ブログ設定</button>
 							<div class="genre1">
-								<br>
 								<ul id="blog" style="display: block">
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="25"><label
-											for="status">事務室</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="22">小カテゴリ</label>
+										<ul>
+											<li>
+												<label><input type="checkbox" value="">お知らせ	2023年度</label>
+												<label><input type="checkbox" value="">進度ベスト 2023年度</label>
+											</li>
+										</ul>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="51"><label
-											for="status">学校からのお知らせ</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="25">事務室</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="49"><label
-											for="status">テストブログ１</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="51">学校からのお知らせ</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="61"><label
-											for="status">３２期（中1）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="49">テストブログ１</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="48"><label
-											for="status">３１期（中２）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="61">３２期（中1）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="45"><label
-											for="status">３０期（中３）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="48">３１期（中２）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="43"><label
-											for="status">２９期（高１）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="45">３０期（中３）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="40"><label
-											for="status">２８期（高２）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="43">２９期（高１）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="36"><label
-											for="status">２７期（高３）</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="40">２８期（高２）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="22"><label
-											for="status">公文式放課後教室</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="36">２７期（高３）</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="12"><label
-											for="status">寮</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="22">公文式放課後教室</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="44"><label
-											for="status">行事</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="12">寮</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="37"><label
-											for="status">国際部・KGC</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="44">行事</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="33"><label
-											for="status">進路部</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="37">国際部・KGC</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="46"><label
-											for="status">生徒部</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="33">進路部</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="24"><label
-											for="status">図書館</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="46">生徒部</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="26"><label
-											for="status">保健室</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="24">図書館</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="27"><label
-											for="status">生徒相談室</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="26">保健室</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="59"><label
-											for="status">生徒会・委員会・部活動</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="27">生徒相談室</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="60"><label
-											for="status">行事</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="59">生徒会・委員会・部活動</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="47"><label
-											for="status">生徒手帳</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="60">行事</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="38"><label
-											for="status">学校安全</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="47">生徒手帳</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="50"><label
-											for="status">欠席遅刻連絡</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="38">学校安全</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="52"><label
-											for="status">登校困難時</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="50">欠席遅刻連絡</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="53"><label
-											for="status">いじめ防止</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="52">登校困難時</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="54"><label
-											for="status">年間行事予定</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="53">いじめ防止</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="55"><label
-											for="status">食堂メニュー</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="54">年間行事予定</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="56"><label
-											for="status">バス時刻表</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="55">食堂メニュー</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="57"><label
-											for="status">事務室申請書類</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="56">バス時刻表</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="58"><label
-											for="status">生徒環境票</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="57">事務室申請書類</label>
 									</li>
 									<li>
-										<input type="radio" id="blog_id" name="blog_id" value="41"><label
-											for="status">学校連絡先</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="58">生徒環境票</label>
+									</li>
+									<li>
+										<label><input type="radio" id="blog_id" name="blog_id" value="41">学校連絡先</label>
 									</li>
 								</ul>
 							</div>
@@ -660,9 +631,7 @@
 			}
 		</script>
 
-		<div id="footer">
-			<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
-		</div>
+		
 
 	</div>
 

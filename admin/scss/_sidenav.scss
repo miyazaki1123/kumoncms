@@ -12,12 +12,11 @@
 				background: #004098;
 
 				button {
-
 					background: #BF9D6D;
 					width: 100%;
 					text-align: left;
 					color: #fff;
-
+					z-index: 10;
 					@include mx.hover {
 						filter: brightness(1.2);
 					}
@@ -37,7 +36,7 @@
 				>a,
 				h3,
 				button {
-					padding: 0.4em 0 0.4em 0.5em;
+					padding: 0.2em 0 0.2em 0.5em;
 					display: flex;
 					align-items: center;
 					width: 100%;

@@ -3,7 +3,7 @@
 .site-header {
     width: 100%;
     height: 100px;
-    position: sticky;
+    position: fixed;
     left: 0;
     top:0;
     background: #fff;
@@ -196,7 +196,9 @@
         }
     }
 }
-
+.site-main{
+    margin-top: 100px;
+}
 .todays-info {
     display: flex;
     align-items: center;
