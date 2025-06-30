@@ -454,6 +454,7 @@ body {
         grid-template-columns: 0.3fr 1fr;
         grid-template-rows: auto;
         gap: 15px 0px;
+        margin: 10px 0 0;
 
         dt,
         dd {
@@ -525,6 +526,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 5px;
         @include mx.fs(20);
         border-radius: 4px;
 
@@ -537,13 +539,18 @@ body {
 
         &--ss {
             @include mx.fs(16);
-            max-width: 230px;
-            width: 100%;
+            width: fit-content;
+            padding: 0 20px;
             height: 42px;
         }
 
         @include mx.hover {
             opacity: 0.6;
+        }
+
+        &--gray {
+            color: #fff;
+            background: #888888;
         }
 
         &--green {
@@ -1449,9 +1456,17 @@ label {
     }
 }
 
-.align--center {
-    * {
-        margin: auto;
+.align {
+    &--center {
+        * {
+            margin: auto;
+        }
+    }
+
+    &--right {
+        * {
+            margin: auto 0 auto auto;
+        }
     }
 }
 
@@ -1477,5 +1492,18 @@ label {
 .mt {
     &--30 {
         margin-top: 30px;
+    }
+}
+
+.tbl-scroll {
+    overflow-x: auto;
+    .tbl--s01 {
+        table-layout: auto;
+        width: 100%;
+        position: relative;
+        th,td {
+            width: calc((100vw - 350px) / 3) ;
+            min-width: 200px;
+        }
     }
 }

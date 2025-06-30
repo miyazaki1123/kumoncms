@@ -86,7 +86,7 @@ $root-font-size: 16;
   font-size: calc( $font-size-px / $root-font-size * 1rem );
  
   @if($font-size-sp-px){
-    @include sp {
+    @include max_w(1280) {
       font-size: calc( $font-size-sp-px / $root-font-size * 1rem );
     }
   }
