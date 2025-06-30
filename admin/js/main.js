@@ -48,12 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
     sideNav();
     const slideButton = document.querySelector(".toggle-genre1");
     const slideMenu = document.querySelector(".btn-menu");
+      if(document.querySelector('.right')){
     slideButton.addEventListener("click", function () {
       slideButton.classList.toggle('close');
       document.querySelector('.site-contents').classList.toggle('hide-right');
       document.querySelector('.right').classList.toggle('hide');
     });
-
+  }
     slideMenu.addEventListener("click", function () {
       slideMenu.classList.toggle('close');
       document.querySelector('.site-main').classList.toggle('hide-navi');

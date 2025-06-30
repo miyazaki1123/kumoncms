@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<link href="/admin/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/admin/css/reset.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/pagenation.css">
+	<link rel="stylesheet" type="text/css" href="/admin/js/calendar.css" media="all">
+
+	<script type="text/javascript" src="/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="/admin/js/over.js"></script>
+	<script type="text/javascript" src="/admin/js/inputCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/confirmCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/com.js"></script>
+	<script type="text/javascript" src="/admin/js/calendar.js"></script>
+
+	<link href="/admin/css/style_02.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,-25" />
+
+</head>
+
+<body id="page">
+	<a name="top"></a>
+
+	<div id="wrap">
+
+		<!--ヘッダー-->
+		<header class="site-header">
+			<div class="site-header__top">
+				<div class="site-title">
+					<h1>公文国際学園中等部・高等部　保護者専用サイト[管理画面]</h1>
+				</div>
+				<nav class="nav-account">
+					<ul>
+						<li><a href="/admin/index.php/user"><span class="icon icon--account"></span>admin</a></li>
+						<li><a href="/admin/index.php/login/logout"><span class="icon icon--logout"></span>ログアウトする</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="site-header__bottom">
+				<div class="logo--kumon">
+					<img src="/admin/image/site_logo.svg" alt="KUMON">
+					<p>Contents Management System</p>
+				</div>
+
+				<div class="todays-info">
+					<div class="todays-info__date">2024<span>年</span>7<span>月</span>5<span>日(水)</span></div>
+					<div class="todays-info__weather"><img src="/admin/image/icon_cloud.png" alt="">曇り</div>
+					<div class="todays-info__temperature">29°C</div>
+					<div class="todays-info__time">8:24</div>
+				</div>
+			</div>
+		</header>
+		<!--ヘッダー-->
+
+		<script type="text/javascript" src="/admin//js/nicEdit.js"></script>
+
+		<script type="text/javascript">
+
+			bkLib.onDomLoaded(function () {
+				//	new nicEditor().panelInstance('report_note');
+				//	new nicEditor({panelType :'noimage'}).panelInstance('report_note');
+				//	new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+				new nicEditor({ buttonList: ['save', 'bold', 'italic', 'underline', 'left', 'center', 'right', 'ol', 'ul', 'fontSize', 'upload', 'link', 'unlink', 'forecolor', 'bgcolor', 'removeformat', 'html'] }).panelInstance('report_note');
+				//	new nicEditor({maxHeight : 100}).panelInstance('area5');
+			});
+
+		</script>
+
+		<main class="site-main">
+
+
+
+			<!--ナビ-->
+
+			<div id="navi">
+				<button type="button" class="btn-menu"><span class="icon icon--lists"></span><span
+						class="text">MENU</span></button>
+				<nav id="navi__inner">
+
+					<a href=""><span class="icon icon--dashboard"></span>ダッシュボード</a>
+					<h3><span class="icon icon--description"></span>ブログ記事</h3>
+					<ul>
+						<li><a href="/admin/index.php/content" class="current">一覧</a></li>
+						<li><a href="/admin/index.php/content/add">新規登録</a></li>
+					</ul>
+
+					<!--<h3>行事カレンダー</h3>
+	<ul>
+	<li><a href="/admin/index.php/calendar">行事一覧</a></li>
+	<li><a href="/admin/index.php/calendar/add">新規追加</a></li>
+	<li><a href="/admin/index.php/calendar/upload">アップロード</a></li>
+	</ul>-->
+					<h3><span class="icon icon--filter"></span>アルバム</h3>
+					<ul>
+						<li><a href="/admin/index.php/album">一覧</a></li>
+						<li><a href="/admin/index.php/album/add">新規登録</a></li>
+					</ul>
+
+					<h3><span class="icon icon--content_paste"></span>欠席/遅刻/早退連絡管理</h3>
+					<ul>
+						<li><a href="">一覧</a></li>
+						<li><a href="">新規登録</a></li>
+					</ul>
+
+
+					<h3><span class="icon icon--email"></span>一斉メール送信</h3>
+					<ul>
+						<li><a href="/admin/index.php/mail/list">一覧</a></li>
+						<li><a href="/admin/index.php/mail">新規登録</a></li>
+					</ul>
+
+
+
+
+					<h3><span class="icon icon--account"></span>管理者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/user">一覧</a></li>
+						<li><a href="/admin/index.php/user/add">新規登録</a></li>
+					</ul>
+					<h3><span class="icon icon--account"></span>保護者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/muser">一覧</a></li>
+						<li><a href="/admin/index.php/muser/upload">新規登録</a></li>
+						<li><a href="">新規一括登録</a></li>
+						<li><a href="">アカウント登録通知</a></li>
+					</ul>
+
+					<h3><span class="icon icon--settings"></span>ブログ管理</h3>
+					<ul>
+						<!--<li><a href="/admin/index.php/blog">ブログ管理</a></li>-->
+						<li><a href="/admin/index.php/blog/list">一覧</a></li>
+						<li><a href="/admin/index.php/blog/add">新規追加</a></li>
+						<!--	<li><a href="/admin/index.php/blog/image">見出し画像</a></li>-->
+					</ul>
+					<h3><span class="icon icon--campaign"></span>インフォメーション</h3>
+					<ul>
+						<li><a href="/admin/index.php/info">情報の更新</a></li>
+					</ul>
+					<!--
+	<h3>バナー</h3>
+	<ul>
+	<li><a href="/admin/index.php/banner">バナー一覧</a></li>
+	<li><a href="/admin/index.php/banner/add">新規追加</a></li>
+	</ul>
+-->
+					<h3><span class="icon icon--group_2"></span>年度更新</h3>
+					<ul>
+						<li><a href="/admin/index.php/nendo">年度更新</a></li>
+					</ul>
+
+					<h3><span class="icon icon--live_help2"></span>アンケートフォーム</h3>
+					<ul>
+						<li><a href="/admin/index.php/question">フォーム一覧</a></li>
+						<li><a href="/admin/index.php/question/add">フォーム新規登録</a></li>
+						<li><a href="/admin/index.php/data">データ一覧</a></li>
+						<li><a href="/admin/index.php/data/add">データ新規登録</a></li>
+					</ul>
+
+					<div id="Copyright">
+						<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
+					</div>
+				</nav>
+
+
+			</div>
+			<!--/ナビ-->
+
+			<div id="view">
+				<form name="form2" method="post" action="http://192.168.1.4/admin/index.php/content/search_exec"
+					id="search">
+					<section class="site-contents">
+						<h2><span class="icon icon--description"></span><span class="page-title">記事一覧</span></h2>
+
+
+						<div class="contents">
+							<section class="flex--col gap--40">
+								<div class="content content--list-blog">
+									<h3>一覧</h3>
+
+									<table class="tbl">
+										<tbody>
+											<tr>
+												<td width="5%" nowrap="" class="searchtd">
+													<p class="text">記事名
+														<input type="text" value="" name="search_title"
+															id="search_title">
+													</p>
+												</td>
+												<td width="20%" nowrap="" class="searchtd">
+													<label>
+														<input type="radio" name="search_status" id="search_status"
+															value="0">公開
+													</label>
+													<label>
+														<input type="radio" name="search_status" id="search_status"
+															value="1">非公開
+													</label>
+													<label>
+														<input type="radio" name="search_status" id="search_status"
+															value="2">下書き
+													</label>
+
+												</td>
+												<td class="searchtd">
+													<button type="button" id="_SEARCH"
+														class="cursor_finger btn-square btn-square--s btn-square--green">検
+														索
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="align--right">
+										<a href="" class="btn-border btn-border--ss btn-border--green">新規登録</a>
+									</div>
+									
+									<table class="tbl--s01">
+										<thead>
+											<tr>
+												<th>表示ブログ</th>
+												<th>記事名</th>
+												<th>状況</th>
+												<th>閲覧数</th>
+												<th>作成日</th>
+												<th>作成者</th>
+												<th>アンケート</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>校長室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10270">ww</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2024/06/27</td>
+												<td>wwwww</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10269">test</a>
+												</td>
+												<td>公開</td>
+												<td>2人</td>
+												<td>2024/05/28</td>
+												<td>test</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/question/results/10269/79">結果</a>
+												</td>
+											</tr>
+											<tr>
+												<td>３２期（中1）</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10268">テスト記事１</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2024/05/01</td>
+												<td>aaa</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>２７期（高３）</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10267">高3　27期</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>2024/04/03</td>
+												<td>あああ</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>２７期（高３）</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10266">高3　27期</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2024/04/03</td>
+												<td>あああ</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>事務室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10265">test</a>
+												</td>
+												<td>公開</td>
+												<td>3人</td>
+												<td>2024/03/28</td>
+												<td>test</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/question/results/10265/1">結果</a>
+												</td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10149">新評価システムについて</a>
+												</td>
+												<td>公開</td>
+												<td>2人</td>
+												<td>2023/05/15</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10148">2023
+														年度以降のICT
+														機器(BYOD)について</a></td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>2023/03/20</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10147">新型コロナウィルス感染拡大防止のためのオンライン授業について(全学年)</a>
+												</td>
+												<td>公開</td>
+												<td>2人</td>
+												<td>2022/07/15</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10146">新型コロナウィルス感染拡大防止のためのオンライン授業について(中等部)</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2022/07/13</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10145">新型コロナウィルス感染拡大防止のためのオンライン授業について(中学2年B組)</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>2022/07/12</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10144">熱中症予防とマスク着用について</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2022/07/05</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10143">新型コロナウィルス感染拡大防止のためのオンライン授業について(中学2年生)</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2022/04/19</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10142">新型コロナウィルス感染症への対応について</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2022/01/24</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10141">松本秀之教諭の退職について</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2022/01/11</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10140">第29回表現祭
+														来校者制限について</a></td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2021/10/04</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10139">9月スタディーウィークの各行事延期について</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>2021/08/19</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10138">芸術鑑賞会の実施について【実施します】</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>2020/09/29</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10137">7/6（月）以降の平日の登校および授業スケジュール変更について</a>
+												</td>
+												<td>公開</td>
+												<td>0人</td>
+												<td>2020/06/26</td>
+												<td>官野久光</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10136">緊急事態宣言解除時における今後の学園の予定について</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>-0001/11/30</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10135">お知らせ（再開時のスケジュールについて）</a>
+												</td>
+												<td>公開</td>
+												<td>1人</td>
+												<td>-0001/11/30</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10150">新型コロナウィルス感染拡大防止についてのお願い</a>
+												</td>
+												<td>公開</td>
+												<td>9人</td>
+												<td>2023/05/23</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>図書館</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10099">【図書館より】「生徒にどうしてもすすめたい本」が冊子になりました</a>
+												</td>
+												<td>非公開</td>
+												<td>1人</td>
+												<td>2023/06/12</td>
+												<td>二村</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>保健室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10111">保健だより　6月号</a>
+												</td>
+												<td>公開</td>
+												<td>124人</td>
+												<td>2023/06/13</td>
+												<td>小嶋　美樹</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>事務室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10108">《高等部対象》東京都授業料軽減助成金・奨学給付金について</a>
+												</td>
+												<td>公開</td>
+												<td>69人</td>
+												<td>2023/06/12</td>
+												<td>宮本由紀美</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>事務室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10106">《高1対象》高等学校等就学支援金（７～６月分）神奈川県学費補助金について</a>
+												</td>
+												<td>公開</td>
+												<td>128人</td>
+												<td>2023/06/12</td>
+												<td>宮本由紀美</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>事務室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10105">《高2・高3対象》高等学校等就学支援金（７～６月分）神奈川県学費補助金について</a>
+												</td>
+												<td>公開</td>
+												<td>82人</td>
+												<td>2023/06/12</td>
+												<td>宮本由紀美</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10097">【寮部】ホタル観賞会</a>
+												</td>
+												<td>公開</td>
+												<td>70人</td>
+												<td>2023/06/10</td>
+												<td>坂野</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10096">【寮部】ディズニーランド遠足に参加された生徒の保護者の皆様へ</a>
+												</td>
+												<td>公開</td>
+												<td>89人</td>
+												<td>2023/06/10</td>
+												<td>坂野</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>事務室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10087">《高3対象》キーエンス財団　給付型奨学金のご案内</a>
+												</td>
+												<td>公開</td>
+												<td>203人</td>
+												<td>2023/06/09</td>
+												<td>和田</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>進路部</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10080">進路部より：東京大学教養学部主催「高校生と大学生のための金曜特別講座」(2023年度夏学期)のご案内</a>
+												</td>
+												<td>公開</td>
+												<td>72人</td>
+												<td>2023/06/07</td>
+												<td>進路部主任　原　英泰</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10061">「寮部　女子寮」こすずめ寮だより</a>
+												</td>
+												<td>公開</td>
+												<td>39人</td>
+												<td>2023/06/01</td>
+												<td>坂野</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10077">【寮部】6月9日（金）中1学年行事の昼食について
+													</a></td>
+												<td>公開</td>
+												<td>78人</td>
+												<td>2023/06/06</td>
+												<td>石井琢也</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10073">【寮部】前期オープンデイズについて</a>
+												</td>
+												<td>公開</td>
+												<td>95人</td>
+												<td>2023/06/05</td>
+												<td>石井琢也</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10074">【寮部・男子寮】えんじゅ寮だより</a>
+												</td>
+												<td>公開</td>
+												<td>78人</td>
+												<td>2023/06/05</td>
+												<td>石井琢也</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>進路部</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10057">進路部より：東京大学教養学部主催「高校生と大学生のための金曜特別講座」(2023年度夏学期)のご案内</a>
+												</td>
+												<td>公開</td>
+												<td>177人</td>
+												<td>2023/06/01</td>
+												<td>進路部主任　原　英泰</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>食堂メニュー</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10055">
+														6月の食堂メニュー＜昼食＞</a></td>
+												<td>公開</td>
+												<td>567人</td>
+												<td>2023/05/31</td>
+												<td>小金　幸子</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>食堂メニュー</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10054">
+														6月の食堂メニュー＜朝夕食＞</a></td>
+												<td>公開</td>
+												<td>197人</td>
+												<td>2023/05/31</td>
+												<td>小金　幸子</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10050">【寮部】さわやか運動に参加しました</a>
+												</td>
+												<td>公開</td>
+												<td>137人</td>
+												<td>2023/05/31</td>
+												<td>新宅光穂</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>進路部</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10045">『中央大学国際情報学部ガイダンス』のお知らせです。</a>
+												</td>
+												<td>公開</td>
+												<td>279人</td>
+												<td>2023/05/30</td>
+												<td>進路部主任　原　英泰</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10044">【寮部】ディズニーランド寮遠足</a>
+												</td>
+												<td>公開</td>
+												<td>136人</td>
+												<td>2023/05/30</td>
+												<td>原</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10043">前期中間試験時間割</a>
+												</td>
+												<td>公開</td>
+												<td>1110人</td>
+												<td>2023/05/29</td>
+												<td>官野久光</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>バス時刻表</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10039">6月のバス時刻表</a>
+												</td>
+												<td>公開</td>
+												<td>929人</td>
+												<td>2023/05/28</td>
+												<td>和田</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10024">【寮部】外泊届のフォーム申請について</a>
+												</td>
+												<td>公開</td>
+												<td>170人</td>
+												<td>2023/05/25</td>
+												<td>原</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>学校からのお知らせ</td>
+												<td><a href="http://192.168.1.4/admin/index.php/content/upd/10029">体育祭社会福祉委員会
+														募金活動にご協力ありがとうございました。</a></td>
+												<td>公開</td>
+												<td>387人</td>
+												<td>2023/05/26</td>
+												<td>瀬谷 智子</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>進路部</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10020">進路部より：東京大学教養学部主催「高校生と大学生のための金曜特別講座」(2023年度夏学期)のご案内</a>
+												</td>
+												<td>公開</td>
+												<td>159人</td>
+												<td>2023/05/25</td>
+												<td>進路部主任　原　英泰</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>寮</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10019">【寮部】2023年度年間行事予定（寮予定入り）0524訂正版</a>
+												</td>
+												<td>公開</td>
+												<td>122人</td>
+												<td>2023/05/24</td>
+												<td>寮部</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>生徒相談室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10016">「2023年度教育講座」ご参加ありがとうございました。</a>
+												</td>
+												<td>公開</td>
+												<td>493人</td>
+												<td>2023/05/24</td>
+												<td>浦　時緒</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>校長室</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/10010">新型コロナウィルス感染拡大防止についてのお願い</a>
+												</td>
+												<td>公開</td>
+												<td>995人</td>
+												<td>2023/05/23</td>
+												<td>亀井圭太郎</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>行事</td>
+												<td><a
+														href="http://192.168.1.4/admin/index.php/content/upd/9983">【体育祭】本日5/21(日)の開催について</a>
+												</td>
+												<td>公開</td>
+												<td>910人</td>
+												<td>2023/05/20</td>
+												<td>佐々木昌男</td>
+												<td></td>
+											</tr>
+
+										</tbody>
+									</table>
+									<ul id="pagination-flickr">
+										<p class="pagination"></p>
+										<li class="previous"><a href="http://192.168.1.4/admin/index.php/content/index/">前へ</a></li>
+										<li class="active">1</li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/50">2</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/100">3</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/150">4</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/200">5</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/250">6</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/300">7</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/350">8</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/400">9</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/450">10</a></li>
+										<li><a href="http://192.168.1.4/admin/index.php/content/index/500">11</a></li>
+										<li class="next"><a
+												href="http://192.168.1.4/admin/index.php/content/index/50">次へ</a></li>
+										<p></p>
+									</ul>
+
+								</div>
+							</section>
+
+
+						</div>
+					</section>
+
+				</form>
+
+				<script type="text/javascript">
+					$(function () {
+						$('#_SEARCH').click(function () {
+							var ElementsCount = document.form2.elements.length;	// ラジオボタンの数
+							if (document.form2.elements[0].checked == false &&
+								document.form2.elements[1].checked == false &&
+								document.form2.elements[2].checked == false) {
+								document.getElementById("search_status").value = "";
+							}
+							$('#search').submit();
+						});
+					});
+				</script>
+			</div>
+		</main>
+
+		<script type="text/javascript" src="/admin/js/json/content_add.json"></script>
+		<script>
+			$(function () {
+				$('#_ADD').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById('prev').value = "";
+						if (registConfirm()) {
+							$('#add').submit();
+						}
+					}
+					return false;
+				});
+			});
+			$(function () {
+				$('#_PREV').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById("prev").value = "on";
+						$('#add').submit();
+					}
+					return false;
+				});
+			});
+
+			function delete_image(num) {
+				var area = document.getElementById('gazo' + num);
+				var temp = area.innerHTML;
+				area.innerHTML = temp;
+
+			}
+		</script>
+
+
+
+	</div>
+
+
+
+
+
+</body>
+<script type="module" src="/admin/js/main.js"></script>
+
+</html>

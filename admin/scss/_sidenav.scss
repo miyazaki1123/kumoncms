@@ -17,6 +17,9 @@
 			display: flex;
 			align-items: center;
 			gap: 5px;
+			@include mx.max_w(1280){
+				width: 200px;
+			}
 			.text{
 				font-weight: 700;
 			}
@@ -34,6 +37,7 @@
 		}
 
 		#navi {
+			
 			margin: 0;
 			width: 100%;
 			float: none;
@@ -44,6 +48,9 @@
 				height: 50px;
 			}
 			#navi__inner {
+				@include mx.max_w(1280){
+					width: 200px!important;
+				}
 				z-index: 10;
 				background: #004098;
 
@@ -66,6 +73,9 @@
 					align-items: center;
 					width: 100%;
 					gap: 5px;
+					@include mx.max_w(1280){
+								@include mx.fs(14);
+							}
 
 				}
 
@@ -98,7 +108,9 @@
 							display: block;
 							background: rgba(255, 255, 255, 0.85);
 							position: relative;
-
+							@include mx.max_w(1280){
+								@include mx.fs(14);
+							}
 							&.current {
 								color: #009B63;
 
