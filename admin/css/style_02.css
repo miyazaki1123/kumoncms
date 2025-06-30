@@ -1430,6 +1430,9 @@ label {
   vertical-align: middle;
   position: relative;
 }
+#view .contents .tbl--s01 tbody tr td.align--center {
+  text-align: center;
+}
 #view .contents .tbl--s01 tbody tr td::after {
   content: "";
   background: #EFF7F4;
