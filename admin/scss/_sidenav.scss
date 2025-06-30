@@ -1,5 +1,7 @@
 @use "_mixin.scss" as mx;
-
+html{
+	background: #EFF7F4;
+}
 #page {
 	.site-main {
 		.btn-menu {

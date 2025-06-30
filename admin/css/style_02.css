@@ -2880,6 +2880,10 @@ label {
           align-items: center;
 }
 
+html {
+  background: #EFF7F4;
+}
+
 #page .site-main .btn-menu {
   background: #BF9D6D;
   width: 100%;
