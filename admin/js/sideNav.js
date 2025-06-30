@@ -571,7 +571,7 @@ function toggleSIdebar() {
    const sidebar2 = new StickySidebar(".right", {
     containerSelector: ".site-main",
     innerWrapperSelector: ".right .genre1",
-    topSpacing: 0,
+    topSpacing: 10,
     bottomSpacing:20
   });
 
@@ -584,7 +584,10 @@ function toggleSIdebar() {
     document.querySelectorAll('[name="blog_id"]').forEach(function (e, index) {
       e.addEventListener("change", function () {
         sidebar2.updateSticky();
-        console.log('a')
+           setTimeout(function () {
+            sidebar.updateSticky();
+            sidebar2.updateSticky();
+          }, 300); // 0.1秒（100ms）
       });
     });
   }
