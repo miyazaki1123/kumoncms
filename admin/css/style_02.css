@@ -3025,6 +3025,7 @@ label {
 }
 #page .site-main #navi #navi__inner ul li a.current {
   color: #009B63;
+  background: #EFF7F4;
 }
 #page .site-main #navi #navi__inner ul li a.current::after {
   content: "";
