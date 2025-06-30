@@ -1,3 +1,4 @@
+import { slideToggle, slideUp, slideDown } from "./slideToggle.js";
 export function sideNav() {
 
 /**
@@ -566,9 +567,28 @@ function toggleSIdebar() {
     topSpacing: 140,
     bottomSpacing:0
   });
-  window.addEventListener("load", function () {
-    //sidebar.updateSticky();
+
+   const sidebar2 = new StickySidebar(".right", {
+    containerSelector: ".site-main",
+    innerWrapperSelector: ".right .genre1",
+    topSpacing: 0,
+    bottomSpacing:20
   });
+
+  window.addEventListener("load", function () {
+    sidebar.updateSticky();
+    sidebar2.updateSticky();
+  });
+
+    if (document.querySelector('[name="blog_id"]')) {
+    document.querySelectorAll('[name="blog_id"]').forEach(function (e, index) {
+      e.addEventListener("change", function () {
+        sidebar2.updateSticky();
+        console.log('a')
+      });
+    });
+  }
+
 }
 
 // #navi が追加されたら実行

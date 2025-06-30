@@ -2038,8 +2038,19 @@ label {
   padding-top: 52px;
   position: relative;
 }
+#page .site-main #view .site-contents .right .genre1 {
+  background: #D4EBE3;
+}
 #page .site-main #view .site-contents .right.hide {
-  right: -250px;
+  background: transparent;
+  height: 0px;
+}
+#page .site-main #view .site-contents .right.hide .genre1 {
+  -webkit-transform: translateX(250px);
+          transform: translateX(250px);
+  opacity: 0;
+  pointer-events: none;
+  height: 0px;
 }
 #page .site-main #view .site-contents .right .toggle-genre1 {
   width: 250px;

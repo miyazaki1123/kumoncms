@@ -86,9 +86,18 @@
 					color: #888888;
 					padding-top: 52px;
 					position: relative;
-
+					.genre1{
+						background: #D4EBE3;
+					}
 					&.hide {
-						right: -250px;
+						background: transparent;
+						height: 0px;
+						.genre1{
+							transform: translateX(250px);
+							opacity: 0;
+							pointer-events: none;
+							height: 0px;
+						}
 					}
 
 					.toggle-genre1 {
