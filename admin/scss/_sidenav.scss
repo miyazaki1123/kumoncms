@@ -1,26 +1,51 @@
 @use "_mixin.scss" as mx;
+
 #page {
 	.site-main {
+		.btn-menu {
+			background: #BF9D6D;
+			width: 100%;
+			text-align: left;
+			color: #fff;
+			z-index: 10;
+			position: fixed;
+			left: 0;
+			top: 100px;
+			width: 250px;
+			height: 40px;
+			padding: 0em 0 0em 0.5em;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			.text{
+				font-weight: 700;
+			}
+			&.close{
+				width: 40px;
+				.text{
+					display: none;
+				}
+			}
+			@include mx.hover {
+				filter: brightness(1.2);
+			}
+
+			z-index: 100;
+		}
+
 		#navi {
 			margin: 0;
 			width: 100%;
 			float: none;
 			background: #004098;
 			position: relative;
+			&.hide{
+				margin-left: -250px;
+				height: 50px;
+			}
 			#navi__inner {
 				z-index: 10;
 				background: #004098;
-
-				button {
-					background: #BF9D6D;
-					width: 100%;
-					text-align: left;
-					color: #fff;
-					z-index: 10;
-					@include mx.hover {
-						filter: brightness(1.2);
-					}
-				}
 
 				>a {
 					background: #009B63;
@@ -73,19 +98,22 @@
 							display: block;
 							background: rgba(255, 255, 255, 0.85);
 							position: relative;
-							&.current{
+
+							&.current {
 								color: #009B63;
-								&::after{
-									content:"";
+
+								&::after {
+									content: "";
 									width: 5px;
-									height: calc(100% - 6px) ;
+									height: calc(100% - 6px);
 									background: #009B63;
 									position: absolute;
 									right: 3px;
-									top:3px;
+									top: 3px;
 									z-index: 2;
 								}
 							}
+
 							@include mx.hover {
 								background: rgba(255, 255, 255, 1);
 							}
@@ -93,6 +121,7 @@
 					}
 				}
 			}
+
 			.copyright {
 				background: none;
 				width: calc(100% - 10px);

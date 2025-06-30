@@ -4,8 +4,8 @@ let SLIDE_TOGGLE_FLAG = 0;
 export function slideToggle(element,btn,speed,overflow='hidden',youso='block') {
   let speed2;
   if(!speed){
-    speed2 = '0.6s';
-    speed = 600;
+    speed2 = '0.3s';
+    speed = 300;
   }else{
     speed2 = (speed/1000)+'s';
   }
@@ -25,8 +25,8 @@ export function slideToggle(element,btn,speed,overflow='hidden',youso='block') {
 export function slideUp(element,btn,speed,overflow='hidden') {
   let speed2;
   if(!speed){
-    speed2 = '0.6s';
-    speed = 600;
+    speed2 = '0.3s';
+    speed = 300;
   }else{
     speed2 = (speed/1000)+'s';
   }
@@ -35,8 +35,8 @@ export function slideUp(element,btn,speed,overflow='hidden') {
 export function slideDown(element,btn,speed,overflow='hidden',youso='block') {
   let speed2;
   if(!speed){
-    speed2 = '0.6s';
-    speed = 600;
+    speed2 = '0.3s';
+    speed = 300;
   }else{
     speed2 = (speed/1000)+'s';
   }

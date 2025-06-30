@@ -46,7 +46,7 @@ $root-font-size: 16;
     @content;
   }
 }
-@mixin hover($sec:0.3,$ease:ease) {
+@mixin hover($sec:0,$ease:ease) {
   @include pc {
     transition: all $sec+s $ease;
     cursor: pointer;

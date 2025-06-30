@@ -563,12 +563,11 @@ function toggleSIdebar() {
   const sidebar = new StickySidebar("#navi", {
     containerSelector: ".site-main",
     innerWrapperSelector: "#navi #navi__inner",
-    topSpacing: 0,
+    topSpacing: 140,
     bottomSpacing:0
   });
   window.addEventListener("load", function () {
     //sidebar.updateSticky();
-    
   });
 }
 

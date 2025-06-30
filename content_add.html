@@ -72,10 +72,15 @@
 		</script>
 
 		<main class="site-main">
+
+			<button type="button" class="btn-menu"><span class="icon icon--lists"></span><span class="text">MENU</span></button>
+
 			<!--ナビ-->
+			
 			<div id="navi">
+				
 				<nav id="navi__inner">
-					<button type="button"><span class="icon icon--lists"></span>MENU</button>
+					
 					<a href=""><span class="icon icon--dashboard"></span>ダッシュボード</a>
 					<h3><span class="icon icon--description"></span>ブログ記事</h3>
 					<ul>
@@ -481,11 +486,14 @@
 							
 						</div>
 						<div class="right">
-							<button type="button" class="toggle-genre1"><span class="icon icon--gray icon--settings"></span>表示ブログ設定</button>
+							<button type="button" class="toggle-genre1">
+								<span class="icon icon--gray icon--settings"></span>
+								<span class="text">表示ブログ設定</span>
+							</button>
 							<div class="genre1">
 								<ul id="blog" style="display: block">
 									<li>
-										<label><input type="radio" id="blog_id" name="blog_id" value="22">小カテゴリ</label>
+										<label><input type="radio" id="blog_id" name="blog_id" value="22">小カテゴリあり</label>
 										<ul>
 											<li>
 												<label><input type="checkbox" value="">お知らせ	2023年度</label>
@@ -493,6 +501,17 @@
 											</li>
 										</ul>
 									</li>
+
+									<li>
+										<label><input type="radio" id="blog_id" name="blog_id" value="22">小カテゴリあり2</label>
+										<ul>
+											<li>
+												<label><input type="checkbox" value="">お知らせ2	2023年度</label>
+												<label><input type="checkbox" value="">進度ベス2 2023年度</label>
+											</li>
+										</ul>
+									</li>
+
 									<li>
 										<label><input type="radio" id="blog_id" name="blog_id" value="25">事務室</label>
 									</li>
