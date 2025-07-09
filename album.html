@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<link href="/admin/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/admin/css/reset.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/pagenation.css">
+	<link rel="stylesheet" type="text/css" href="/admin/js/calendar.css" media="all">
+
+	<script type="text/javascript" src="/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="/admin/js/over.js"></script>
+	<script type="text/javascript" src="/admin/js/inputCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/confirmCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/com.js"></script>
+	<script type="text/javascript" src="/admin/js/calendar.js"></script>
+
+	<link href="/admin/css/style_02.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,-25" />
+
+</head>
+
+<body id="page">
+	<a name="top"></a>
+
+	<div id="wrap">
+
+		<!--ヘッダー-->
+		<header class="site-header">
+			<div class="site-header__top">
+				<div class="site-title">
+					<h1>公文国際学園中等部・高等部　保護者専用サイト[管理画面]</h1>
+				</div>
+				<nav class="nav-account">
+					<ul>
+						<li><a href="/admin/index.php/user"><span class="icon icon--account"></span>admin</a></li>
+						<li><a href="/admin/index.php/login/logout"><span class="icon icon--logout"></span>ログアウトする</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="site-header__bottom">
+				<div class="logo--kumon">
+					<img src="/admin/image/site_logo.svg" alt="KUMON">
+					<p>Contents Management System</p>
+				</div>
+
+				<div class="todays-info">
+					<div class="todays-info__date">2024<span>年</span>7<span>月</span>5<span>日(水)</span></div>
+					<div class="todays-info__weather"><img src="/admin/image/icon_cloud.png" alt="">曇り</div>
+					<div class="todays-info__temperature">29°C</div>
+					<div class="todays-info__time">8:24</div>
+				</div>
+			</div>
+		</header>
+		<!--ヘッダー-->
+
+		<script type="text/javascript" src="/admin//js/nicEdit.js"></script>
+
+		<script type="text/javascript">
+
+			bkLib.onDomLoaded(function () {
+				//	new nicEditor().panelInstance('report_note');
+				//	new nicEditor({panelType :'noimage'}).panelInstance('report_note');
+				//	new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+				new nicEditor({ buttonList: ['save', 'bold', 'italic', 'underline', 'left', 'center', 'right', 'ol', 'ul', 'fontSize', 'upload', 'link', 'unlink', 'forecolor', 'bgcolor', 'removeformat', 'html'] }).panelInstance('report_note');
+				//	new nicEditor({maxHeight : 100}).panelInstance('area5');
+			});
+
+		</script>
+
+		<main class="site-main">
+
+
+
+			<!--ナビ-->
+
+			<div id="navi">
+				<button type="button" class="btn-menu"><span class="icon icon--lists"></span><span
+						class="text">MENU</span></button>
+				<nav id="navi__inner">
+
+					<a href=""><span class="icon icon--dashboard"></span>ダッシュボード</a>
+					<h3><span class="icon icon--description"></span>ブログ記事</h3>
+					<ul>
+						<li><a href="/admin/index.php/content">一覧</a></li>
+						<li><a href="/admin/index.php/content/add">新規登録</a></li>
+					</ul>
+
+					<!--<h3>行事カレンダー</h3>
+	<ul>
+	<li><a href="/admin/index.php/calendar">行事一覧</a></li>
+	<li><a href="/admin/index.php/calendar/add">新規追加</a></li>
+	<li><a href="/admin/index.php/calendar/upload">アップロード</a></li>
+	</ul>-->
+					<h3><span class="icon icon--filter"></span>アルバム</h3>
+					<ul>
+						<li><a href="/admin/index.php/album" class="current">一覧</a></li>
+						<li><a href="/admin/index.php/album/add">新規登録</a></li>
+					</ul>
+
+					<h3><span class="icon icon--content_paste"></span>欠席/遅刻/早退連絡管理</h3>
+					<ul>
+						<li><a href="">一覧</a></li>
+						<li><a href="">新規登録</a></li>
+					</ul>
+
+
+					<h3><span class="icon icon--email"></span>一斉メール送信</h3>
+					<ul>
+						<li><a href="/admin/index.php/mail/list">一覧</a></li>
+						<li><a href="/admin/index.php/mail">新規登録</a></li>
+					</ul>
+
+
+
+
+					<h3><span class="icon icon--account"></span>管理者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/user">一覧</a></li>
+						<li><a href="/admin/index.php/user/add">新規登録</a></li>
+					</ul>
+					<h3><span class="icon icon--account"></span>保護者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/muser">一覧</a></li>
+						<li><a href="/admin/index.php/muser/upload">新規登録</a></li>
+						<li><a href="">新規一括登録</a></li>
+						<li><a href="">アカウント登録通知</a></li>
+					</ul>
+
+					<h3><span class="icon icon--settings"></span>ブログ管理</h3>
+					<ul>
+						<!--<li><a href="/admin/index.php/blog">ブログ管理</a></li>-->
+						<li><a href="/admin/index.php/blog/list">一覧</a></li>
+						<li><a href="/admin/index.php/blog/add">新規追加</a></li>
+						<!--	<li><a href="/admin/index.php/blog/image">見出し画像</a></li>-->
+					</ul>
+					<h3><span class="icon icon--campaign"></span>インフォメーション</h3>
+					<ul>
+						<li><a href="/admin/index.php/info">情報の更新</a></li>
+					</ul>
+					<!--
+	<h3>バナー</h3>
+	<ul>
+	<li><a href="/admin/index.php/banner">バナー一覧</a></li>
+	<li><a href="/admin/index.php/banner/add">新規追加</a></li>
+	</ul>
+-->
+					<h3><span class="icon icon--group_2"></span>年度更新</h3>
+					<ul>
+						<li><a href="/admin/index.php/nendo">年度更新</a></li>
+					</ul>
+
+					<h3><span class="icon icon--live_help2"></span>アンケートフォーム</h3>
+					<ul>
+						<li><a href="/admin/index.php/question">フォーム一覧</a></li>
+						<li><a href="/admin/index.php/question/add">フォーム新規登録</a></li>
+						<li><a href="/admin/index.php/data">データ一覧</a></li>
+						<li><a href="/admin/index.php/data/add">データ新規登録</a></li>
+					</ul>
+
+					<div id="Copyright">
+						<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
+					</div>
+				</nav>
+
+
+			</div>
+			<!--/ナビ-->
+
+			<div id="view">
+				<form name="form2" method="post" action="http://192.168.1.4/admin/index.php/content/search_exec"
+					id="search">
+					<section class="site-contents">
+						<h2><span class="icon icon--filter"></span><span class="page-title">アルバム</span></h2>
+
+
+						<div class="contents">
+							<section class="flex--col gap--40">
+								<div class="content content--list-album">
+									<h3>一覧</h3>
+
+									<table class="tbl">
+										<tbody>
+											<tr>
+												<td width="5%" nowrap="" class="searchtd">
+													<p class="text">年度
+														<select>
+															<option>2025</option>
+															<option>2024</option>
+															<option>2023</option>
+															<option>2022</option>
+															<option>2021</option>
+														</select>
+													</p>
+												</td>
+												<td width="5%" nowrap="" class="searchtd">
+													<p class="text">アルバム名
+														<input type="text" value="" name="search_name" id="search_name">
+													</p>
+												</td>
+												<td width="20%" nowrap="" class="searchtd">
+													<label>
+														<input type="radio" name="search_status" id="status"
+															value="1">公開
+													</label>
+													<label>
+														<input type="radio" name="search_status" id="status"
+															value="2">非公開
+													</label>
+												</td>
+												<td class="searchtd">
+													<button type="button" id="_SEARCH"
+														class="cursor_finger btn-square btn-square--s btn-square--green">検
+														索
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="align--right mtb--15">
+										<a href="" class="btn-border btn-border--ss btn-border--green">新規登録</a>
+									</div>
+
+									<div class="tbl-scroll" data-scroll-th-width="120">
+										<table class="tbl--s01">
+											<thead>
+												<tr>
+													<th style="width:80px" class="align--center">対象</th>
+													<th style="width:70px" class="align--center">年度</th>
+													<th>アルバム名</th>
+													<th>備考</th>
+													<th style="width:70px" class="align--center">状況</th>
+													<th style="width:50px" class="align--center">写真</th>
+													<th style="width:200px">作成日</th>
+													<th style="width:140px" class="align--center">作成者</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/861">ホタル観賞会</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/861/12">登録</a>
+													</td>
+													<td>2023-06-10 11:41:20</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/860">2023年さわやか運動</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/860/12">登録</a>
+													</td>
+													<td>2023-05-31 07:47:14</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/859">2023年ディズニーランド寮遠足</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/859/12">登録</a>
+													</td>
+													<td>2023-05-30 01:09:52</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/828">2022年秋寮遠足</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/828/12">登録</a>
+													</td>
+													
+													<td>2022-10-28 13:36:01</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>２５期（卒業生）</td>
+													<td>2024</td>
+													<td><a href="http://192.168.1.21/admin/index.php/album/upd/804">鎌倉散策</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/804/31">登録</a>
+													</td>
+													<td>2022-10-03 23:00:51</td>
+													<td>25期</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/772">中２男子寮生写真</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/772/12">登録</a>
+													</td>
+													<td>2022-02-24 13:42:59</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/725">男子寮中1生の様子②</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/725/12">登録</a>
+													</td>
+													<td>2021-05-03 06:58:27</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/680">191006中等部レク</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/680/12">登録</a>
+													</td>
+													<td>2019-10-09 06:25:34</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>寮</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/677">9/30ＴＤＬ寮遠足</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/677/12">登録</a>
+													</td>
+													<td>2019-10-03 12:18:13</td>
+													<td>寮部</td>
+												</tr>
+												<tr>
+													<td>TOPページ</td>
+													<td>2024</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/album/upd/672">社会科巡検2019</a>
+													</td>
+													<td></td>
+													<td>公開</td>
+													<td><a
+															href="http://192.168.1.21/admin/index.php/photo/index/672/1">登録</a>
+													</td>
+													<td>2019-07-17 02:25:38</td>
+													<td>administrator</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<ul id="pagination-flickr">
+										<p class="pagination"></p>
+										<li class="active">1</li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/10">2</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/20">3</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/30">4</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/40">5</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/50">6</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/60">7</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/70">8</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/80">9</a></li>
+										<li><a href="http://192.168.1.21/admin/index.php/album/index/90">10</a></li>
+										<li class="next"><a
+												href="http://192.168.1.21/admin/index.php/album/index/10">次へ</a></li>
+										<p></p>
+									</ul>
+
+								</div>
+							</section>
+
+
+						</div>
+					</section>
+
+				</form>
+
+				<script type="text/javascript">
+					$(function () {
+						$('#_SEARCH').click(function () {
+							var ElementsCount = document.form2.elements.length;	// ラジオボタンの数
+							if (document.form2.elements[0].checked == false &&
+								document.form2.elements[1].checked == false &&
+								document.form2.elements[2].checked == false) {
+								document.getElementById("search_status").value = "";
+							}
+							$('#search').submit();
+						});
+					});
+				</script>
+			</div>
+		</main>
+
+		<script type="text/javascript" src="/admin/js/json/content_add.json"></script>
+		<script>
+			$(function () {
+				$('#_ADD').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById('prev').value = "";
+						if (registConfirm()) {
+							$('#add').submit();
+						}
+					}
+					return false;
+				});
+			});
+			$(function () {
+				$('#_PREV').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById("prev").value = "on";
+						$('#add').submit();
+					}
+					return false;
+				});
+			});
+
+			function delete_image(num) {
+				var area = document.getElementById('gazo' + num);
+				var temp = area.innerHTML;
+				area.innerHTML = temp;
+
+			}
+		</script>
+
+
+
+	</div>
+
+
+
+
+
+</body>
+<script type="module" src="/admin/js/main.js"></script>
+
+</html>

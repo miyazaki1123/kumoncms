@@ -604,7 +604,7 @@ export function sideNav() {
     }
     return StickySidebar2;
   })();
-
+let sidebar2;
   function toggleSIdebar() {
     const sidebar = new StickySidebar("#navi", {
       containerSelector: ".site-main",
@@ -613,7 +613,7 @@ export function sideNav() {
       bottomSpacing: 0,
     });
     if (document.querySelector(".right")) {
-      const sidebar2 = new StickySidebar(".right", {
+      sidebar2 = new StickySidebar(".right", {
         containerSelector: ".site-main",
         innerWrapperSelector: ".right .genre1",
         topSpacing: 10,

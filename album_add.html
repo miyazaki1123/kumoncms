@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<link href="/admin/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/admin/css/reset.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/pagenation.css">
+	<link rel="stylesheet" type="text/css" href="/admin/js/calendar.css" media="all">
+
+	<script type="text/javascript" src="/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="/admin/js/over.js"></script>
+	<script type="text/javascript" src="/admin/js/inputCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/confirmCheck.js"></script>
+	<script type="text/javascript" src="/admin/js/com.js"></script>
+	<script type="text/javascript" src="/admin/js/calendar.js"></script>
+
+	<link href="/admin/css/style_02.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,-25" />
+
+</head>
+
+<body id="page">
+	<a name="top"></a>
+
+	<div id="wrap">
+
+		<!--ヘッダー-->
+		<header class="site-header">
+			<div class="site-header__top">
+				<div class="site-title">
+					<h1>公文国際学園中等部・高等部　保護者専用サイト[管理画面]</h1>
+				</div>
+				<nav class="nav-account">
+					<ul>
+						<li><a href="/admin/index.php/user"><span class="icon icon--account"></span>admin</a></li>
+						<li><a href="/admin/index.php/login/logout"><span class="icon icon--logout"></span>ログアウトする</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="site-header__bottom">
+				<div class="logo--kumon">
+					<img src="/admin/image/site_logo.svg" alt="KUMON">
+					<p>Contents Management System</p>
+				</div>
+
+				<div class="todays-info">
+					<div class="todays-info__date">2024<span>年</span>7<span>月</span>5<span>日(水)</span></div>
+					<div class="todays-info__weather"><img src="/admin/image/icon_cloud.png" alt="">曇り</div>
+					<div class="todays-info__temperature">29°C</div>
+					<div class="todays-info__time">8:24</div>
+				</div>
+			</div>
+		</header>
+		<!--ヘッダー-->
+
+		<script type="text/javascript" src="/admin//js/nicEdit.js"></script>
+
+		<script type="text/javascript">
+
+			bkLib.onDomLoaded(function () {
+				//	new nicEditor().panelInstance('report_note');
+				//	new nicEditor({panelType :'noimage'}).panelInstance('report_note');
+				//	new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+				new nicEditor({ buttonList: ['save', 'bold', 'italic', 'underline', 'left', 'center', 'right', 'ol', 'ul', 'fontSize', 'upload', 'link', 'unlink', 'forecolor', 'bgcolor', 'removeformat', 'html'] }).panelInstance('report_note');
+				//	new nicEditor({maxHeight : 100}).panelInstance('area5');
+			});
+
+		</script>
+
+		<main class="site-main">
+
+
+
+			<!--ナビ-->
+
+			<div id="navi">
+				<button type="button" class="btn-menu"><span class="icon icon--lists"></span><span
+						class="text">MENU</span></button>
+				<nav id="navi__inner">
+
+					<a href=""><span class="icon icon--dashboard"></span>ダッシュボード</a>
+					<h3><span class="icon icon--description"></span>ブログ記事</h3>
+					<ul>
+						<li><a href="/admin/index.php/content">一覧</a></li>
+						<li><a href="/admin/index.php/content/add" class="current">新規登録</a></li>
+					</ul>
+
+					<!--<h3>行事カレンダー</h3>
+	<ul>
+	<li><a href="/admin/index.php/calendar">行事一覧</a></li>
+	<li><a href="/admin/index.php/calendar/add">新規追加</a></li>
+	<li><a href="/admin/index.php/calendar/upload">アップロード</a></li>
+	</ul>-->
+					<h3><span class="icon icon--filter"></span>アルバム</h3>
+					<ul>
+						<li><a href="/admin/index.php/album">一覧</a></li>
+						<li><a href="/admin/index.php/album/add">新規登録</a></li>
+					</ul>
+
+					<h3><span class="icon icon--content_paste"></span>欠席/遅刻/早退連絡管理</h3>
+					<ul>
+						<li><a href="">一覧</a></li>
+						<li><a href="">新規登録</a></li>
+					</ul>
+
+
+					<h3><span class="icon icon--email"></span>一斉メール送信</h3>
+					<ul>
+						<li><a href="/admin/index.php/mail/list">一覧</a></li>
+						<li><a href="/admin/index.php/mail">新規登録</a></li>
+					</ul>
+
+
+
+
+					<h3><span class="icon icon--account"></span>管理者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/user">一覧</a></li>
+						<li><a href="/admin/index.php/user/add">新規登録</a></li>
+					</ul>
+					<h3><span class="icon icon--account"></span>保護者アカウント管理</h3>
+					<ul>
+						<li><a href="/admin/index.php/muser">一覧</a></li>
+						<li><a href="/admin/index.php/muser/upload">新規登録</a></li>
+						<li><a href="">新規一括登録</a></li>
+						<li><a href="">アカウント登録通知</a></li>
+					</ul>
+
+					<h3><span class="icon icon--settings"></span>ブログ管理</h3>
+					<ul>
+						<!--<li><a href="/admin/index.php/blog">ブログ管理</a></li>-->
+						<li><a href="/admin/index.php/blog/list">一覧</a></li>
+						<li><a href="/admin/index.php/blog/add">新規追加</a></li>
+						<!--	<li><a href="/admin/index.php/blog/image">見出し画像</a></li>-->
+					</ul>
+					<h3><span class="icon icon--campaign"></span>インフォメーション</h3>
+					<ul>
+						<li><a href="/admin/index.php/info">情報の更新</a></li>
+					</ul>
+					<!--
+	<h3>バナー</h3>
+	<ul>
+	<li><a href="/admin/index.php/banner">バナー一覧</a></li>
+	<li><a href="/admin/index.php/banner/add">新規追加</a></li>
+	</ul>
+-->
+					<h3><span class="icon icon--group_2"></span>年度更新</h3>
+					<ul>
+						<li><a href="/admin/index.php/nendo">年度更新</a></li>
+					</ul>
+
+					<h3><span class="icon icon--live_help2"></span>アンケートフォーム</h3>
+					<ul>
+						<li><a href="/admin/index.php/question">フォーム一覧</a></li>
+						<li><a href="/admin/index.php/question/add">フォーム新規登録</a></li>
+						<li><a href="/admin/index.php/data">データ一覧</a></li>
+						<li><a href="/admin/index.php/data/add">データ新規登録</a></li>
+					</ul>
+
+					<div id="Copyright">
+						<p>Copyright (C) Access System Co., Ltd. All Rights Reserved.</p>
+					</div>
+				</nav>
+
+
+			</div>
+			<!--/ナビ-->
+
+			<div id="view">
+				<form name="form1" method="post" enctype="multipart/form-data"
+					action="/admin/index.php/content/add_exec" id="add">
+					<input type="hidden" name="prev" value="" id="prev">
+
+					<section class="site-contents">
+						<h2><span class="icon icon--filter"></span><span class="page-title">アルバム</span></h2>
+						<div class="postinfo">
+
+							<p class="msg"><!--?=$msg ?--></p><br>
+
+							<section class="flex--col gap--40">
+								<div class="content--add-blog">
+									<h3>新規登録</h3>
+									<div class="content--box">
+										<div class=" form-wrap">
+											<div>
+												<span>アルバム名</span>
+												<input type="text" size="75" class="t01 imeon" name="report_title"
+													id="report_title">
+											</div>
+
+											<div>
+												<span>備考</span>
+												<textarea size="50" name="album_note" class="t01 imeon"
+													id="album_note"></textarea>
+											</div>
+
+											<div>
+												<span>ステータス(状況)</span>
+												<select name="status">
+													<option value="1" selected="">公開</option>
+													<option value="2">非公開</option>
+												</select>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+
+								<div class="flex j--center gap--40">
+									<button type="button" class="btn-border btn-border--green">
+										キャンセル
+									</button>
+
+									<button type="button" id="_REGIST" class="btn-square btn-square--green">
+										登　録
+									</button>
+								</div>
+
+								
+							</section>
+
+							<div class="flex gap--40 nav--delete">
+									<button type="button" id="_DELETE"
+										class="btn-square btn-square--s btn-square--orange">
+										このアルバム削除する
+									</button>
+								</div>
+								
+						</div>
+						<button type="button" class="toggle-genre1">
+							<span class="icon icon--gray icon--settings"></span>
+							<span class="text">表示ブログ設定</span>
+						</button>
+						<div class="right">
+							<div class="genre1">
+								<ul id="worry">
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="25">事務室</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="48">３１期（中２）</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="45">３０期（中３）</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="43">２９期（高１）</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="40">２８期（高２）</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="36">２７期（高３）</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="22">公文式放課後教室</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="12">寮</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="44">行事</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="37">国際部・KGC</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="33">進路部</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="46">生徒部</label>
+									</li>
+									<li><label
+											for="status">
+										<input type="radio" id="blog_id" name="blog_id" value="24">図書館</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</section>
+
+				</form>
+
+			</div>
+		</main>
+
+		<script type="text/javascript" src="/admin/js/json/content_add.json"></script>
+		<script>
+			$(function () {
+				$('#_ADD').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById('prev').value = "";
+						if (registConfirm()) {
+							$('#add').submit();
+						}
+					}
+					return false;
+				});
+			});
+			$(function () {
+				$('#_PREV').click(function () {
+					// JavaScriptでのバリデーション
+					if (inputCheck()) {
+						document.getElementById("prev").value = "on";
+						$('#add').submit();
+					}
+					return false;
+				});
+			});
+
+			function delete_image(num) {
+				var area = document.getElementById('gazo' + num);
+				var temp = area.innerHTML;
+				area.innerHTML = temp;
+
+			}
+		</script>
+
+
+
+	</div>
+
+
+
+
+
+</body>
+<script type="module" src="/admin/js/main.js"></script>
+
+</html>
